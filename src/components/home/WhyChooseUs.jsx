@@ -1,12 +1,12 @@
 import React from 'react';
 import SectionHeader from '../ui/SectionHeader';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Clock, Award, Star } from 'lucide-react';
+import { Shield, Clock, Award, Star } from 'lucide-react';
 
 const WhyChooseUs = () => {
   const reasons = [
     {
-      icon: ShieldCheck,
+      icon: Shield,
       title: 'Trusted Experts',
       desc: 'Our doctors are highly qualified with years of specialized experience.'
     },

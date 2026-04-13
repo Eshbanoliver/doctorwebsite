@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Activity, ShieldCircle, Users } from 'lucide-react';
+import { ArrowRight, Activity, Shield, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -49,7 +49,7 @@ const Hero = () => {
             <div className="mt-12 flex items-center space-x-8">
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
-                  <ShieldCircle size={28} />
+                  <Shield size={28} />
                 </div>
                 <div>
                   <div className="font-bold text-lg">100% Safe</div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeader from '../components/ui/SectionHeader';
 import { motion } from 'framer-motion';
-import { Award, BookOpen, Clock, ShieldCheck, Stethoscope, Heart } from 'lucide-react';
+import { Award, BookOpen, Clock, Shield, Stethoscope, Heart } from 'lucide-react';
 import MissionVision from '../components/home/MissionVision';
 import CoreValues from '../components/home/CoreValues';
 

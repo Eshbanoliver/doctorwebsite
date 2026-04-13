@@ -7,7 +7,7 @@ import {
   PlusCircle, 
   Zap, 
   Microscope, 
-  ShieldCheck, 
+  Shield, 
   Video, 
   X, 
   PhoneCall, 

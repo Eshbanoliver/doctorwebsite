@@ -8,7 +8,7 @@ import {
   PlusCircle, 
   Zap, 
   Microscope, 
-  ShieldCheck, 
+  Shield, 
   Video 
 } from 'lucide-react';
 
@@ -43,7 +43,7 @@ const ServicesPreview = () => {
       bg: 'bg-indigo-50'
     },
     {
-      icon: ShieldCheck,
+      icon: Shield,
       title: 'Preventive Healthcare',
       desc: 'Proactive strategies to maintain long-term health and wellness.',
       color: 'text-emerald-500',

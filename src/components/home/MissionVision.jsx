@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeader from '../ui/SectionHeader';
 import { motion } from 'framer-motion';
-import { Target, Eye, ShieldCheck } from 'lucide-react';
+import { Target, Eye, Shield } from 'lucide-react';
 
 const MissionVision = () => {
   return (
@@ -59,7 +59,7 @@ const MissionVision = () => {
               We believe that healthcare should be proactive, not just reactive. Our mission and vision guide every decision we make, ensuring that our patients receive the best possible treatment at every touchpoint.
             </p>
             <div className="flex items-center space-x-4 p-6 glass-card bg-slate-50 border-none rounded-2xl">
-               <ShieldCheck size={40} className="text-primary" />
+               <Shield size={40} className="text-primary" />
                <div className="text-sm font-semibold text-text-muted italic">
                  "Our goal is to make Udaipur the healthiest city in the state through dedicated medical service."
                </div>
