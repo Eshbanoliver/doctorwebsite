@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Stethoscope, Facebook, Instagram, Twitter, Mail, MapPin, Send } from 'lucide-react';
+import { Stethoscope, Globe, Share2, Mail, MapPin, Send } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,7 +23,7 @@ const Footer = () => {
               Providing premium healthcare services with a focus on liquid glass aesthetics and modern medical care.
             </p>
             <div className="flex space-x-4">
-              {[Facebook, Instagram, Twitter].map((Icon, idx) => (
+              {[Globe, Share2, Mail].map((Icon, idx) => (
                 <a key={idx} href="#" className="p-2 glass-card hover:bg-primary hover:text-white transition-all">
                   <Icon size={20} />
                 </a>
