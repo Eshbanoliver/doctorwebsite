@@ -97,7 +97,7 @@ const AboutPreview = () => {
                     →
                   </motion.span>
                 </Link>
-                <Link to="/contact" className="btn-outline btn-large glass-card">
+                <Link to="/contact" className="btn-outline btn-large">
                   Book a Consultation
                 </Link>
               </div>
