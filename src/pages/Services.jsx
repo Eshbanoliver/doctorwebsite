@@ -97,7 +97,7 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 onClick={() => setSelectedService(service)}
-                className="service-explore-card group"
+                className={`service-explore-card ${service.bg} group`}
               >
                 <div className={`service-icon-box ${service.bg}`}>
                   <service.icon size={40} className={service.color} />

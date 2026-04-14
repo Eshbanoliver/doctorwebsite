@@ -77,21 +77,30 @@ const ServicesPreview = () => {
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
+              whileHover={{ 
+                y: -12,
+                transition: { duration: 0.4, ease: "easeOut" }
+              }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
-              className="service-preview-card glass-card group"
+              className={`service-preview-card ${service.bg} group`}
             >
               <div className={`service-icon-container ${service.bg}`}>
-                <service.icon size={32} className={service.color} />
+                <service.icon size={32} className={`${service.color} transition-transform duration-500 group-hover:rotate-12`} />
               </div>
+              
               <h3 className="service-card-title">{service.title}</h3>
               <p className="service-card-desc">
                 {service.desc}
               </p>
+              
               <Link to="/services" className="service-card-link">
                 <span>Explore Details</span>
                 <PlusCircle size={20} className="link-icon" />
               </Link>
+
+              {/* Decorative Subtle Gradient Glow */}
+              <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-blue-400/5 blur-3xl rounded-full group-hover:bg-blue-400/10 transition-colors duration-500"></div>
             </motion.div>
           ))}
         </div>
