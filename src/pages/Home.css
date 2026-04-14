@@ -952,71 +952,120 @@
 }
 
 /* Core Values Section */
+/* Core Values Section - Modernized */
 .core-values-section {
-  padding: 100px 0;
+  padding: 120px 0;
+  background-color: #f8fafc;
 }
 
-.core-values-grid {
+.core-values-grid-v2 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
+  margin-top: 60px;
 }
 
 @media (min-width: 768px) {
-  .core-values-grid {
+  .core-values-grid-v2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .core-values-grid {
+  .core-values-grid-v2 {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.value-card {
-  padding: 40px;
+.value-card-v2 {
+  padding: 60px 40px;
   background: white;
-  text-align: center;
-  border-radius: 32px;
-  transition: all 0.4s ease;
-  border: none;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(14, 165, 233, 0.05);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.value-card:hover {
-  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.1);
-  transform: translateY(-8px);
+.value-card-v2:hover {
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(14, 165, 233, 0.2);
 }
 
-.value-icon-badge {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 24px;
-  border-radius: 16px;
+.value-number-bg {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 6rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  line-height: 1;
+  z-index: 0;
+  transition: all 0.5s ease;
+  user-select: none;
+}
+
+.value-card-v2:hover .value-number-bg {
+  transform: scale(1.1) rotate(-5deg);
+  color: #f1f5f9;
+  opacity: 0.8;
+}
+
+.value-icon-v2 {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease;
 }
 
-.bg-rose-500 { background-color: #f43f5e; }
-.bg-indigo-500 { background-color: #6366f1; }
-.bg-teal-500 { background-color: #14b8a6; }
-.bg-blue-500 { background-color: #3b82f6; }
-
-.icon-white { color: white; }
-
-.value-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 16px;
+.value-card-v2:hover .value-icon-v2 {
+  transform: scale(1.1) rotate(8deg);
 }
 
-.value-desc {
-  font-size: 0.875rem;
+.value-content-v2 {
+  position: relative;
+  z-index: 10;
+}
+
+.value-title-v2 {
+  font-size: 1.625rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.value-desc-v2 {
+  font-size: 1.05rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+.card-line-v2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  transition: width 0.5s ease;
+}
+
+.value-card-v2:hover {
+  transform: translateY(-8px);
+}
+
+.value-card-v2:hover .card-line-v2 {
+  width: 100%;
 }
 
 /* Testimonials Section */
