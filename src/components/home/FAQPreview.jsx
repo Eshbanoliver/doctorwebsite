@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SectionHeader from '../ui/SectionHeader';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus, ChevronRight } from 'lucide-react';
+import { Plus, Minus, ChevronRight, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const FAQPreview = () => {
@@ -27,63 +27,78 @@ const FAQPreview = () => {
   ];
 
   return (
-    <section className="faq-preview-section bg-white">
-      <div className="container">
-        <div className="faq-preview-grid">
+    <section className="faq-preview-section-v2 overflow-hidden">
+      {/* Dynamic Background Elements */}
+      <div className="faq-v2-bg-glow glow-1"></div>
+      <div className="faq-v2-bg-glow glow-2"></div>
+
+      <div className="container relative z-10">
+        <div className="faq-v2-layout">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="faq-preview-text-side"
+            className="faq-v2-header-side"
           >
             <SectionHeader 
               subtitle="Common Inquiries"
               title="Frequently Asked Questions"
             />
-            <p className="faq-preview-intro">
-              Find quick answers to your questions about our services, appointments, and medical care. If you need more information, feel free to visit our full FAQ page.
+            <p className="faq-v2-intro">
+              Find quick answers to your questions about our services, appointments, and medical care.
             </p>
-            <Link to="/faq" className="faq-preview-more-link group">
+            
+            <div className="faq-v2-support-card">
+              <div className="support-icon-v2">
+                <Shield size={32} />
+              </div>
+              <div className="support-text-v2">
+                <h4>Need more help?</h4>
+                <p>Visit our dedicated support center for detailed guides.</p>
+              </div>
+            </div>
+
+            <Link to="/faq" className="faq-v2-main-link group">
               <span>Visit Full FAQ Page</span>
-              <ChevronRight size={24} className="chevron-icon" />
+              <div className="link-circle-v2">
+                <ChevronRight size={20} />
+              </div>
             </Link>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="faq-accordion-stack"
-          >
+          <div className="faq-v2-grid-side">
             {faqs.map((faq, idx) => (
-              <div 
-                key={idx} 
-                className={`faq-preview-item glass-card ${activeIndex === idx ? 'faq-item-active' : ''}`}
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.15 }}
+                viewport={{ once: true }}
+                onClick={() => setActiveIndex(activeIndex === idx ? -1 : idx)}
+                className={`faq-v2-card ${activeIndex === idx ? 'faq-v2-active' : ''}`}
               >
-                <button 
-                  onClick={() => setActiveIndex(activeIndex === idx ? -1 : idx)}
-                  className="faq-preview-btn"
-                >
-                  <span className="faq-preview-question">{faq.question}</span>
-                  {activeIndex === idx ? <Minus size={24} /> : <Plus size={24} className="faq-plus-icon" />}
-                </button>
+                <div className="faq-v2-card-head">
+                   <span className="faq-v2-q-text">{faq.question}</span>
+                   <div className="faq-v2-toggle-icon">
+                     {activeIndex === idx ? <Minus size={20} /> : <Plus size={20} />}
+                   </div>
+                </div>
+                
                 <AnimatePresence>
                   {activeIndex === idx && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      className="faq-preview-answer-container"
+                      className="faq-v2-answer-box"
                     >
-                      <div className="faq-preview-answer-text">
-                        {faq.answer}
-                      </div>
+                      <p>{faq.answer}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
