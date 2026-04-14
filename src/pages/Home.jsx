@@ -4,6 +4,7 @@ import Hero from '../components/home/Hero';
 import AboutPreview from '../components/home/AboutPreview';
 import Metrics from '../components/home/Metrics';
 import ServicesPreview from '../components/home/ServicesPreview';
+import DoctorPreview from '../components/home/DoctorPreview';
 import MissionVision from '../components/home/MissionVision';
 import CoreValues from '../components/home/CoreValues';
 import WhyChooseUs from '../components/home/WhyChooseUs';
@@ -18,6 +19,7 @@ const Home = () => {
       <AboutPreview />
       <Metrics />
       <ServicesPreview />
+      <DoctorPreview />
       <MissionVision />
       <WhyChooseUs />
       <CoreValues />

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Award, BookOpen, Clock, Shield, Stethoscope, Heart } from 'lucide-react';
 import MissionVision from '../components/home/MissionVision';
 import CoreValues from '../components/home/CoreValues';
+import DoctorPreview from '../components/home/DoctorPreview';
 
 const About = () => {
   const experiences = [
@@ -142,6 +143,7 @@ const About = () => {
         </div>
       </section>
 
+      <DoctorPreview />
       <MissionVision />
       <CoreValues />
     </div>
