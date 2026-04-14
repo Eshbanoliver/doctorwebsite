@@ -78,3 +78,15 @@
 .milestone-card:hover .milestone-year {
   color: white;
 }
+
+@media (max-width: 768px) {
+  .about-hero { padding: 60px 0; text-align: center; }
+  .badge-float { 
+    position: relative; 
+    right: 0; 
+    bottom: 0; 
+    margin: 20px auto 0; 
+    width: fit-content; 
+  }
+  .milestone-year { font-size: 2rem; }
+}

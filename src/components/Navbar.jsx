@@ -64,16 +64,18 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-24 left-6 right-6 p-6 glass-card md:hidden flex flex-col space-y-4"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="absolute top-24 left-6 right-6 p-8 glass-card md:hidden flex flex-col space-y-6 shadow-2xl z-[100]"
           >
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className="text-lg font-medium text-text-muted hover:text-primary"
+                className={`text-xl font-bold transition-all ${
+                  location.pathname === link.path ? 'text-primary' : 'text-text-main'
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
@@ -81,10 +83,10 @@ const Navbar = () => {
             ))}
             <Link 
               to="/contact" 
-              className="w-full text-center py-3 bg-primary text-white rounded-xl font-semibold"
+              className="w-full text-center py-4 bg-primary text-white rounded-2xl font-bold shadow-lg shadow-primary/30"
               onClick={() => setIsOpen(false)}
             >
-              Book Now
+              Book Appointment
             </Link>
           </motion.div>
         )}
