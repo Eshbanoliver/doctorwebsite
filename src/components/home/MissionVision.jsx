@@ -102,8 +102,33 @@ const MissionVision = () => {
             </p>
             <motion.div 
               whileHover={{ y: -5, scale: 1.02 }}
-              className="mission-quote-card"
+              className="mission-quote-card blue-outline-card"
             >
+               {/* Floating Background Icons */}
+               <div className="quote-bg-icons">
+                 <motion.div 
+                   animate={{ y: [0, -15, 0], opacity: [0.1, 0.2, 0.1] }} 
+                   transition={{ duration: 4, repeat: Infinity }}
+                   className="quote-float-icon icon-1"
+                 >
+                   <Shield size={24} />
+                 </motion.div>
+                 <motion.div 
+                   animate={{ y: [0, 20, 0], opacity: [0.05, 0.15, 0.05] }} 
+                   transition={{ duration: 6, repeat: Infinity }}
+                   className="quote-float-icon icon-2"
+                 >
+                   <Target size={20} />
+                 </motion.div>
+                 <motion.div 
+                   animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }} 
+                   transition={{ duration: 5, repeat: Infinity }}
+                   className="quote-float-icon icon-3"
+                 >
+                   <Eye size={22} />
+                 </motion.div>
+               </div>
+
                <Shield size={48} className="quote-icon" />
                <div className="quote-text">
                  "Our goal is to make Udaipur the healthiest city in the state through dedicated medical service."

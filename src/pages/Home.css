@@ -735,6 +735,31 @@
   overflow: hidden;
 }
 
+.blue-outline-card {
+  border: 2px solid var(--primary);
+  background: linear-gradient(to right, white, #f0f9ff);
+  box-shadow: 0 20px 50px rgba(14, 165, 233, 0.1);
+}
+
+.quote-bg-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.quote-float-icon {
+  position: absolute;
+  color: var(--primary);
+}
+
+.icon-1 { top: 10%; right: 15%; }
+.icon-2 { bottom: 15%; left: 30%; }
+.icon-3 { top: 40%; left: 10%; }
+
 .mission-quote-card::after {
   content: '';
   position: absolute;
@@ -742,7 +767,7 @@
   bottom: -20px;
   width: 120px;
   height: 120px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
   border-radius: 50%;
 }
 
