@@ -11,13 +11,13 @@ const Metrics = () => {
   ];
 
   return (
-    <section className="py-16 bg-grad-primary relative overflow-hidden">
+    <section className="metrics-section">
       {/* Decorative Circles */}
-      <div className="absolute top-[-50px] left-[-50px] w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-[-50px] right-[-50px] w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="metrics-blob blob-top"></div>
+      <div className="metrics-blob blob-bottom"></div>
       
       <div className="container">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="metrics-grid">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
@@ -25,13 +25,13 @@ const Metrics = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="text-center text-white"
+              className="metric-card"
             >
-              <div className="w-16 h-16 mx-auto mb-6 glass-card bg-white/20 border-white/30 rounded-2xl flex items-center justify-center">
+              <div className="metric-icon-box glass-card">
                 <stat.icon size={32} />
               </div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
-              <div className="text-sm font-medium opacity-80 uppercase tracking-widest">{stat.label}</div>
+              <div className="metric-value">{stat.value}</div>
+              <div className="metric-label">{stat.label}</div>
             </motion.div>
           ))}
         </div>

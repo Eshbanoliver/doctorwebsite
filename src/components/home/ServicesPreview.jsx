@@ -59,19 +59,19 @@ const ServicesPreview = () => {
   ];
 
   return (
-    <section className="section-padding bg-slate-50">
+    <section className="services-preview-section highlight-bg">
       <div className="container">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+        <div className="services-preview-header">
           <SectionHeader 
             subtitle="Our Expertise"
             title="Premium Medical Services"
           />
-          <Link to="/services" className="mb-12 px-8 py-3 bg-white text-primary font-bold rounded-xl border border-primary/20 hover:bg-primary hover:text-white transition-all shadow-sm">
+          <Link to="/services" className="btn-utility">
             View All Services
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="services-preview-grid">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -79,18 +79,18 @@ const ServicesPreview = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="glass-card group hover:bg-white hover:-translate-y-2 transition-all p-10"
+              className="service-preview-card glass-card group"
             >
-              <div className={`w-16 h-16 rounded-2xl ${service.bg} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform`}>
+              <div className={`service-icon-container ${service.bg}`}>
                 <service.icon size={32} className={service.color} />
               </div>
-              <h3 className="text-2xl font-bold text-text-main mb-4">{service.title}</h3>
-              <p className="text-text-muted mb-6 leading-relaxed">
+              <h3 className="service-card-title">{service.title}</h3>
+              <p className="service-card-desc">
                 {service.desc}
               </p>
-              <Link to="/services" className="text-primary font-bold flex items-center space-x-2 group-hover:space-x-4 transition-all">
+              <Link to="/services" className="service-card-link">
                 <span>Explore Details</span>
-                <PlusCircle size={20} />
+                <PlusCircle size={20} className="link-icon" />
               </Link>
             </motion.div>
           ))}

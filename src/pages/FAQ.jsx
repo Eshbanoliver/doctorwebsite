@@ -57,10 +57,10 @@ const FAQ = () => {
   );
 
   return (
-    <div className="faq-page bg-slate-50 min-height-screen">
-      <section className="section-padding relative overflow-hidden">
+    <div className="faq-page-wrapper highlight-bg min-height-screen">
+      <section className="faq-main-section">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full -z-10"></div>
+        <div className="faq-bg-blob"></div>
         
         <div className="container">
           <SectionHeader 
@@ -70,18 +70,18 @@ const FAQ = () => {
           />
           
           {/* Search Bar */}
-          <div className="faq-search-wrapper">
-            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-text-muted" />
+          <div className="faq-search-box">
+            <Search className="faq-search-icon" />
             <input 
               type="text" 
               placeholder="Search for questions (e.g. Appointment, Insurance)..."
-              className="faq-search-input"
+              className="faq-search-input-field"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="faq-accordion-list">
             {filteredFaqs.length > 0 ? (
               filteredFaqs.map((faq, idx) => (
                 <motion.div 
@@ -89,19 +89,19 @@ const FAQ = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.05 }}
                   key={idx} 
-                  className={`faq-item ${activeIndex === idx ? 'active' : ''}`}
+                  className={`faq-accordion-item ${activeIndex === idx ? 'expanded' : ''}`}
                 >
                   <button 
                     onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
-                    className="faq-question-btn"
+                    className="faq-trigger-btn"
                   >
-                    <div className="flex flex-col">
-                      <span className="faq-category">
+                    <div className="faq-trigger-content">
+                      <span className="faq-item-category">
                         {faq.category}
                       </span>
-                      <span className="text-xl font-bold">{faq.question}</span>
+                      <span className="faq-item-question">{faq.question}</span>
                     </div>
-                    <div className={`p-2 rounded-full transition-all ${activeIndex === idx ? 'bg-white/20' : 'bg-primary/5'}`}>
+                    <div className={`faq-icon-badge ${activeIndex === idx ? 'badge-active' : ''}`}>
                       {activeIndex === idx ? <Minus size={24} /> : <Plus size={24} className="text-primary" />}
                     </div>
                   </button>
@@ -111,9 +111,9 @@ const FAQ = () => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
+                        className="faq-answer-container"
                       >
-                        <div className="px-8 pb-10 pt-0 opacity-90 text-lg leading-relaxed">
+                        <div className="faq-answer-text">
                            {faq.answer}
                         </div>
                       </motion.div>
@@ -122,24 +122,24 @@ const FAQ = () => {
                 </motion.div>
               ))
             ) : (
-              <div className="text-center py-20 faq-item">
-                <p className="text-xl text-text-muted">No questions found matching your search. Try different keywords.</p>
+              <div className="faq-no-results">
+                <p className="no-results-text">No questions found matching your search. Try different keywords.</p>
               </div>
             )}
           </div>
 
           {/* Contact Section */}
-          <div className="faq-cta">
-             <h3 className="text-3xl font-bold mb-6">Still have questions?</h3>
-             <p className="text-lg opacity-90 mb-10">
+          <div className="faq-contact-cta">
+             <h3 className="cta-main-title">Still have questions?</h3>
+             <p className="cta-sub-title">
                If you couldn't find the answer you were looking for, feel free to reach out to us directly.
              </p>
-             <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <button className="px-10 py-5 bg-white text-primary rounded-2xl font-bold flex items-center justify-center space-x-3 shadow-xl">
+             <div className="cta-action-group">
+                <button className="btn-chat-action">
                    <MessageCircle size={24} />
                    <span>Chat with Us</span>
                 </button>
-                <button className="px-10 py-5 glass-card bg-white/20 border-white/30 rounded-2xl font-bold text-white">
+                <button className="btn-call-action-glass">
                    Call Support
                 </button>
              </div>

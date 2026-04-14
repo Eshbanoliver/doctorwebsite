@@ -27,24 +27,25 @@ const FAQPreview = () => {
   ];
 
   return (
-    <section className="section-padding bg-white">
+    <section className="faq-preview-section bg-white">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="faq-preview-grid">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="faq-preview-text-side"
           >
             <SectionHeader 
               subtitle="Common Inquiries"
               title="Frequently Asked Questions"
             />
-            <p className="text-lg text-text-muted mb-10 leading-relaxed">
+            <p className="faq-preview-intro">
               Find quick answers to your questions about our services, appointments, and medical care. If you need more information, feel free to visit our full FAQ page.
             </p>
-            <Link to="/faq" className="group flex items-center space-x-3 text-primary font-bold text-lg hover:space-x-4 transition-all">
+            <Link to="/faq" className="faq-preview-more-link group">
               <span>Visit Full FAQ Page</span>
-              <ChevronRight size={24} />
+              <ChevronRight size={24} className="chevron-icon" />
             </Link>
           </motion.div>
 
@@ -52,19 +53,19 @@ const FAQPreview = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="faq-accordion-stack"
           >
             {faqs.map((faq, idx) => (
               <div 
                 key={idx} 
-                className={`glass-card border-none transition-all ${activeIndex === idx ? 'bg-primary text-white' : 'bg-slate-50 hover:bg-white hover:shadow-lg'}`}
+                className={`faq-preview-item glass-card ${activeIndex === idx ? 'faq-item-active' : ''}`}
               >
                 <button 
                   onClick={() => setActiveIndex(activeIndex === idx ? -1 : idx)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left"
+                  className="faq-preview-btn"
                 >
-                  <span className="text-lg font-bold">{faq.question}</span>
-                  {activeIndex === idx ? <Minus size={24} /> : <Plus size={24} className={activeIndex === idx ? 'text-white' : 'text-primary'} />}
+                  <span className="faq-preview-question">{faq.question}</span>
+                  {activeIndex === idx ? <Minus size={24} /> : <Plus size={24} className="faq-plus-icon" />}
                 </button>
                 <AnimatePresence>
                   {activeIndex === idx && (
@@ -72,9 +73,9 @@ const FAQPreview = () => {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
+                      className="faq-preview-answer-container"
                     >
-                      <div className="px-8 pb-8 pt-0 opacity-90 leading-relaxed">
+                      <div className="faq-preview-answer-text">
                         {faq.answer}
                       </div>
                     </motion.div>

@@ -6,25 +6,19 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <section className="hero-section">
-      {/* Background with Gradient Overlay */}
-      <div className="hero-bg">
-        <img 
-          src="/hero-bg.png" 
-          alt="Medical Hero" 
-        />
-        <div className="hero-overlay"></div>
-      </div>
-
+      <div className="hero-bg-accent"></div>
+      
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="hero-grid">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="hero-content"
           >
-            <div className="hero-badge-container">
-              <Activity size={18} className="text-secondary" />
-              <span className="text-sm font-bold text-primary">Your Health, Our Priority</span>
+            <div className="hero-alert-badge">
+              <Activity size={18} className="icon-pulse" />
+              <span className="badge-text">Your Health, Our Priority</span>
             </div>
             
             <h1 className="hero-title">
@@ -35,37 +29,37 @@ const Hero = () => {
               Experience premium medical care with our liquid glass approach. We combine advanced technology with compassionate service for a healthier future.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-                <Link to="/contact" className="group w-full sm:w-auto px-10 sm:px-12 py-5 bg-primary text-white rounded-2xl font-bold inline-flex items-center justify-center space-x-3 hover:bg-primary-dark transition-all shadow-xl hover:shadow-primary/40 no-underline whitespace-nowrap">
-                  <span className="text-white">Book Appointment</span>
-                  <ArrowRight size={22} className="text-white group-hover:translate-x-1 transition-transform" />
+            <div className="hero-button-group">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="btn-wrapper">
+                <Link to="/contact" className="btn-primary hero-btn">
+                  <span>Book Appointment</span>
+                  <ArrowRight size={22} className="arrow-icon" />
                 </Link>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-                <Link to="/services" className="w-full sm:w-auto px-10 sm:px-12 py-5 glass-card bg-white/40 text-text-main rounded-2xl font-bold inline-flex items-center justify-center hover:bg-white hover:text-primary transition-all no-underline whitespace-nowrap">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="btn-wrapper">
+                <Link to="/services" className="btn-outline hero-btn glass-card">
                   <span>Explore Services</span>
                 </Link>
               </motion.div>
             </div>
 
-            <div className="hero-stats">
-              <div className="stat-item">
-                <div className="stat-icon">
-                  <Shield size={28} className="text-secondary" />
+            <div className="hero-stats-row">
+              <div className="stat-card">
+                <div className="stat-icon-circle bg-soft-teal">
+                  <Shield size={28} className="text-teal" />
                 </div>
-                <div className="stat-info">
-                  <div className="label">100% Safe</div>
-                  <div className="sub">Certified Care</div>
+                <div className="stat-text">
+                  <span className="stat-count">100% Safe</span>
+                  <span className="stat-label">Certified Care</span>
                 </div>
               </div>
-              <div className="stat-item">
-                <div className="stat-icon">
-                  <Users size={28} className="text-primary" />
+              <div className="stat-card">
+                <div className="stat-icon-circle bg-soft-blue">
+                  <Users size={28} className="text-blue" />
                 </div>
-                <div className="stat-info">
-                  <div className="label">24/7 Support</div>
-                  <div className="sub">Ready to Help</div>
+                <div className="stat-text">
+                  <span className="stat-count">24/7 Support</span>
+                  <span className="stat-label">Ready to Help</span>
                 </div>
               </div>
             </div>
@@ -75,13 +69,14 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="hidden lg:block hero-visuals"
+            className="hero-visual-wrapper"
           >
-            <div className="main-hero-card">
-               <div className="w-full aspect-square bg-grad-primary opacity-20 blur-3xl absolute -z-10 rounded-full"></div>
+            <div className="hero-main-image-container">
+               <div className="hero-image-blur-bg"></div>
                <img 
                 src="https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80&w=800"
                 alt="Doctor" 
+                className="hero-main-img"
                />
             </div>
             
@@ -89,28 +84,28 @@ const Hero = () => {
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="floating-card floating-card-accuracy"
+              className="float-card accuracy-card glass-card"
             >
-              <div className="icon-box icon-teal">
+              <div className="float-icon-box bg-teal">
                 <Activity size={24} />
               </div>
-              <div>
-                <div className="text-sm text-text-muted">Accuracy</div>
-                <div className="font-bold text-2xl text-text-main">99.9%</div>
+              <div className="float-info">
+                <span className="float-label">Accuracy</span>
+                <span className="float-value">99.9%</span>
               </div>
             </motion.div>
 
             <motion.div 
               animate={{ y: [0, 15, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="floating-card floating-card-patients"
+              className="float-card patient-card glass-card"
             >
-              <div className="icon-box icon-blue">
+              <div className="float-icon-box bg-blue">
                 <Users size={24} />
               </div>
-              <div>
-                <div className="text-sm text-text-muted">Patients</div>
-                <div className="font-bold text-2xl text-text-main">15k+</div>
+              <div className="float-info">
+                <span className="float-label">Patients</span>
+                <span className="float-value">15k+</span>
               </div>
             </motion.div>
           </motion.div>

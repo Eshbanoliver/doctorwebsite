@@ -32,7 +32,7 @@ const CoreValues = () => {
   ];
 
   return (
-    <section className="section-padding bg-slate-50 relative">
+    <section className="core-values-section highlight-bg">
       <div className="container">
         <SectionHeader 
           subtitle="Our Foundation"
@@ -40,7 +40,7 @@ const CoreValues = () => {
           centered
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="core-values-grid">
           {values.map((val, idx) => (
             <motion.div
               key={idx}
@@ -48,13 +48,13 @@ const CoreValues = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="p-8 glass-card bg-white text-center hover:shadow-2xl transition-all border-none group"
+              className="value-card glass-card group"
             >
-              <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl ${val.color} text-white flex items-center justify-center group-hover:rotate-12 transition-transform`}>
-                <val.icon size={32} />
+              <div className={`value-icon-badge ${val.color} group-hover:rotate-12`}>
+                <val.icon size={32} className="icon-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4">{val.title}</h3>
-              <p className="text-text-muted text-sm leading-relaxed">
+              <h3 className="value-title">{val.title}</h3>
+              <p className="value-desc">
                 {val.desc}
               </p>
             </motion.div>

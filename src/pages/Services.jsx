@@ -76,19 +76,19 @@ const Services = () => {
   ];
 
   return (
-    <div className="services-page">
-      <section className="section-padding bg-slate-50 relative overflow-hidden">
+    <div className="services-page-container">
+      <section className="services-hero-section highlight-bg">
         <div className="container">
           <SectionHeader 
             subtitle="Expert Care"
             title="Comprehensive Medical Services"
             centered
           />
-          <p className="text-xl text-text-muted text-center max-w-3xl mx-auto mb-20 leading-relaxed">
+          <p className="services-hero-desc">
             We provide a wide range of specialized medical services designed to meet the unique needs of every patient. Our approach is defined by precision, compassion, and innovation.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="services-main-grid">
             {services.map((service, idx) => (
               <motion.div
                 key={idx}
@@ -97,18 +97,18 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 onClick={() => setSelectedService(service)}
-                className="service-card group"
+                className="service-explore-card group"
               >
                 <div className={`service-icon-box ${service.bg}`}>
                   <service.icon size={40} className={service.color} />
                 </div>
-                <h3 className="text-2xl font-bold text-text-main mb-4">{service.title}</h3>
-                <p className="text-text-muted mb-8 italic">
+                <h3 className="service-explore-title">{service.title}</h3>
+                <p className="service-explore-desc">
                   "{service.desc}"
                 </p>
-                <div className="flex items-center space-x-3 text-primary font-bold">
+                <div className="service-explore-link">
                    <span>Learn More</span>
-                   <PlusCircle size={20} />
+                   <PlusCircle size={20} className="link-icon" />
                 </div>
               </motion.div>
             ))}
@@ -117,32 +117,32 @@ const Services = () => {
       </section>
 
       {/* Specialist Consultations Detail */}
-      <section className="specialist-section">
+      <section className="specialist-consult-section">
         <div className="container">
-           <div className="specialist-card">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-                 <div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-8">Specialist Consultations</h2>
-                    <p className="text-xl opacity-90 mb-10 leading-relaxed">
+           <div className="specialist-box-card">
+              <div className="specialist-layout-grid">
+                 <div className="specialist-text-content">
+                    <h2 className="specialist-main-title">Specialist Consultations</h2>
+                    <p className="specialist-sub-desc">
                       Our clinic hosts visiting specialists across Cardiology, Orthopedics, Pediatrics, and Gynacology. We ensure you get expert advice from the best in the field without traveling outside Udaipur.
                     </p>
-                    <div className="space-y-4 mb-12">
+                    <div className="specialist-list">
                        {['Cardiology', 'Orthopedics', 'Pediatrics', 'Obstetrics & Gynaecology'].map((spec, idx) => (
-                          <div key={idx} className="flex items-center space-x-3">
-                             <CheckSquare size={24} className="text-white" />
-                             <span className="text-xl font-medium">{spec}</span>
+                          <div key={idx} className="spec-list-item">
+                             <CheckSquare size={24} className="spec-check-icon" />
+                             <span className="spec-item-name">{spec}</span>
                           </div>
                        ))}
                     </div>
-                    <button className="px-10 py-5 bg-white text-primary rounded-2xl font-bold text-lg hover:bg-slate-100 transition-all shadow-xl">
+                    <button className="btn-white-action">
                        Get Specialist Appointment
                     </button>
                  </div>
-                 <div className="hidden lg:block">
+                 <div className="specialist-visual-side">
                     <img 
                       src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=600" 
                       alt="Specialist" 
-                      className="rounded-[40px] shadow-2xl float-anim w-full"
+                      className="specialist-hero-img float-anim"
                     />
                  </div>
               </div>
@@ -153,46 +153,46 @@ const Services = () => {
       {/* Service Detail Modal */}
       <AnimatePresence>
         {selectedService && (
-          <div className="modal-backdrop" onClick={() => setSelectedService(null)}>
+          <div className="modal-overlay-backdrop" onClick={() => setSelectedService(null)}>
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="service-modal"
+              className="service-details-modal"
               onClick={(e) => e.stopPropagation()}
             >
               <button 
                 onClick={() => setSelectedService(null)}
-                className="absolute top-6 right-8 text-text-muted hover:text-text-main"
+                className="modal-close-btn"
               >
                 <X size={32} />
               </button>
 
-              <div className={`w-24 h-24 rounded-3xl ${selectedService.bg} flex items-center justify-center mb-10`}>
+              <div className={`modal-icon-container ${selectedService.bg}`}>
                 <selectedService.icon size={50} className={selectedService.color} />
               </div>
 
-              <h2 className="text-4xl font-bold text-text-main mb-6">{selectedService.title}</h2>
-              <p className="text-xl text-text-muted mb-10 leading-relaxed">
+              <h2 className="modal-title-text">{selectedService.title}</h2>
+              <p className="modal-detailed-desc">
                 {selectedService.detailed_desc}
               </p>
 
-              <h4 className="text-xl font-bold mb-6">Key Benefits:</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+              <h4 className="modal-subtitle">Key Benefits:</h4>
+              <div className="modal-benefits-grid">
                 {selectedService.benefits.map((benefit, i) => (
-                  <div key={i} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span className="font-semibold text-text-main">{benefit}</span>
+                  <div key={i} className="benefit-item">
+                    <div className="benefit-dot"></div>
+                    <span className="benefit-text">{benefit}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                 <button className="flex-1 py-4 bg-primary text-white rounded-2xl font-bold flex items-center justify-center space-x-3">
+              <div className="modal-actions-box">
+                 <button className="btn-call-to-action">
                     <PhoneCall size={20} />
                     <span>Call to Inquire</span>
                  </button>
-                 <button className="flex-1 py-4 border-2 border-primary text-primary rounded-2xl font-bold">
+                 <button className="btn-book-outline">
                     Book This Service
                  </button>
               </div>
