@@ -8,22 +8,26 @@ const WhyChooseUs = () => {
     {
       icon: Shield,
       title: 'Trusted Experts',
-      desc: 'Our doctors are highly qualified with years of specialized experience.'
+      desc: 'Our doctors are highly qualified with years of specialized experience.',
+      colorClass: 'reason-blue'
     },
     {
       icon: Clock,
       title: '24/7 Availability',
-      desc: 'We are always here for you, ensuring healthcare is accessible anytime.'
+      desc: 'We are always here for you, ensuring healthcare is accessible anytime.',
+      colorClass: 'reason-teal'
     },
     {
       icon: Award,
       title: 'Modern Technology',
-      desc: 'We use the latest diagnostic and treatment tools for better outcomes.'
+      desc: 'We use the latest diagnostic and treatment tools for better outcomes.',
+      colorClass: 'reason-amber'
     },
     {
       icon: Star,
       title: 'Patient Satisfaction',
-      desc: 'We pride ourselves on our consistent high rating from our patients.'
+      desc: 'We pride ourselves on our consistent high rating from our patients.',
+      colorClass: 'reason-rose'
     }
   ];
 
@@ -47,7 +51,7 @@ const WhyChooseUs = () => {
             
             <div className="reasons-stack">
               {reasons.map((reason, idx) => (
-                <div key={idx} className="reason-item-card glass-card">
+                <div key={idx} className={`reason-item-card ${reason.colorClass}`}>
                   <div className="reason-icon-box">
                     <reason.icon size={28} />
                   </div>

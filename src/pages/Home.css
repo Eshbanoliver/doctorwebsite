@@ -825,17 +825,30 @@
   align-items: center;
   gap: 24px;
   padding: 24px;
-  background: var(--bg-color);
-  border: none;
+  background: white;
+  border: 1px solid #f1f5f9;
   border-radius: 24px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
+.reason-blue { background-color: #f0f9ff; border-color: #e0f2fe; }
+.reason-teal { background-color: #f0fdfa; border-color: #ccfbf1; }
+.reason-amber { background-color: #fffbeb; border-color: #fef3c7; }
+.reason-rose { background-color: #fff1f2; border-color: #ffe4e6; }
+
 .reason-item-card:hover {
-  background: white;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
+  transform: translateY(-5px) scale(1.02);
+  background-color: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  border-color: rgba(14, 165, 233, 0.2);
 }
+
+.reason-blue .reason-icon-box { background: #e0f2fe; color: #0ea5e9; }
+.reason-teal .reason-icon-box { background: #ccfbf1; color: #14b8a6; }
+.reason-amber .reason-icon-box { background: #fef3c7; color: #d97706; }
+.reason-rose .reason-icon-box { background: #ffe4e6; color: #e11d48; }
 
 .reason-icon-box {
   width: 52px;
