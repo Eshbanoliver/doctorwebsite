@@ -9,7 +9,11 @@ const Footer = () => {
     <footer className="main-footer">
       <div className="footer-top-accent"></div>
       
-      <div className="container">
+      {/* Visual Accents */}
+      <div className="footer-glow glow-1"></div>
+      <div className="footer-glow glow-2"></div>
+      
+      <div className="container relative z-10">
         <div className="footer-layout-grid">
           {/* Brand & Info */}
           <div className="footer-brand-section">
@@ -17,7 +21,7 @@ const Footer = () => {
               <div className="footer-icon-badge">
                 <Stethoscope size={24} />
               </div>
-              <span className="footer-brand-name gradient-text">Doctor</span>
+              <span className="footer-brand-name">Doctor</span>
             </Link>
             <p className="footer-brand-desc">
               Providing premium healthcare services with a focus on liquid glass aesthetics and modern medical care.
@@ -57,22 +61,6 @@ const Footer = () => {
                 <Mail size={20} className="footer-contact-icon" />
                 <span>contact@doctor.com</span>
               </div>
-            </div>
-          </div>
-
-          {/* Newsletter */}
-          <div className="footer-newsletter-section">
-            <h4 className="footer-col-title">Newsletter</h4>
-            <p className="newsletter-sub-text">Subscribe to get medical updates and wellness tips.</p>
-            <div className="newsletter-form-container">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="newsletter-input glass-card"
-              />
-              <button className="btn-newsletter-send">
-                <Send size={20} />
-              </button>
             </div>
           </div>
         </div>
