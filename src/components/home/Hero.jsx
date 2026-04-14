@@ -36,13 +36,17 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-6 items-center">
-              <Link to="/contact" className="px-12 py-5 bg-primary text-white rounded-2xl font-bold inline-flex items-center space-x-3 hover:bg-primary-dark transition-all shadow-xl hover:shadow-primary/30 hover:-translate-y-1 no-underline whitespace-nowrap">
-                <span className="text-white">Book Appointment</span>
-                <ArrowRight size={22} className="text-white" />
-              </Link>
-              <Link to="/services" className="px-12 py-5 glass-card bg-white/40 text-text-main rounded-2xl font-bold inline-flex items-center hover:bg-white transition-all hover:-translate-y-1 no-underline whitespace-nowrap">
-                <span>Explore Services</span>
-              </Link>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/contact" className="group px-12 py-5 bg-primary text-white rounded-2xl font-bold inline-flex items-center space-x-3 hover:bg-primary-dark transition-all shadow-xl hover:shadow-primary/40 hover:-translate-y-1 no-underline whitespace-nowrap">
+                  <span className="text-white">Book Appointment</span>
+                  <ArrowRight size={22} className="text-white group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/services" className="px-12 py-5 glass-card bg-white/40 text-text-main rounded-2xl font-bold inline-flex items-center hover:bg-white hover:text-primary transition-all hover:-translate-y-1 no-underline whitespace-nowrap">
+                  <span>Explore Services</span>
+                </Link>
+              </motion.div>
             </div>
 
             <div className="hero-stats">
