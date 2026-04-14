@@ -59,7 +59,7 @@ const AboutPreview = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="about-content-card glass-card"
+              className="about-content-card"
             >
               <SectionHeader 
                 subtitle="Why Choose Our Practice"
@@ -80,7 +80,7 @@ const AboutPreview = () => {
                     className="about-highlight-item"
                   >
                     <div className="highlight-icon-box">
-                      <CheckCircle2 size={28} className="icon-white" />
+                      <CheckCircle2 size={24} />
                     </div>
                     <div className="highlight-text">
                       <span className="highlight-title">{item}</span>
