@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Contact.css';
 import SectionHeader from '../components/ui/SectionHeader';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Send, Calendar, Clock, User, MessageSquare } from 'lucide-react';
@@ -39,7 +40,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="pt-32 pb-20 bg-slate-50">
+    <div className="contact-page bg-slate-50 pb-20">
       <section className="section-padding relative overflow-hidden">
         {/* Decorative Background */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-grad-primary/5 -skew-x-12 translate-x-1/4 -z-10"></div>
@@ -58,9 +59,9 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-10 glass-card bg-white border-none shadow-sm hover:shadow-xl transition-all text-center group"
+                className="info-card group"
               >
-                <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl ${info.color} text-white flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                <div className={`info-icon-box ${info.color}`}>
                   <info.icon size={30} />
                 </div>
                 <h4 className="text-xl font-bold text-text-main mb-2">{info.title}</h4>
@@ -77,20 +78,14 @@ const Contact = () => {
                viewport={{ once: true }}
                className="space-y-8"
              >
-                <div className="glass-card bg-white p-4 rounded-[40px] shadow-2xl overflow-hidden aspect-video relative">
-                   {/* Blank map iframe placeholder as requested */}
+                <div className="map-card">
                    <div className="w-full h-full bg-slate-100 flex flex-col items-center justify-center text-text-muted">
                       <MapPin size={60} className="mb-4 opacity-20" />
                       <span className="font-bold text-lg opacity-40 italic">Google Map Placeholder</span>
-                      <iframe 
-                        title="Google Maps"
-                        className="absolute inset-0 w-full h-full opacity-0 pointer-events-none"
-                        src=""
-                      ></iframe>
                    </div>
                 </div>
 
-                <div className="p-10 glass-card bg-grad-primary text-white rounded-[40px] shadow-2xl">
+                <div className="hours-card">
                    <h3 className="text-2xl font-bold mb-6">Appointment Hours</h3>
                    <div className="space-y-4">
                       <div className="flex justify-between items-center pb-4 border-b border-white/20">
@@ -114,7 +109,7 @@ const Contact = () => {
                initial={{ opacity: 0, x: 50 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="glass-card bg-white p-12 lg:p-16 rounded-[40px] shadow-2xl border-none"
+               className="contact-form-card"
              >
                 <div className="mb-10">
                    <h3 className="text-3xl font-bold text-text-main mb-4">Book Your Visit</h3>
@@ -123,8 +118,8 @@ const Contact = () => {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                         <label className="text-sm font-bold text-text-main ml-2 flex items-center space-x-2">
+                      <div className="form-group">
+                         <label className="form-label">
                             <User size={16} className="text-primary" />
                             <span>Full Name</span>
                          </label>
@@ -132,12 +127,12 @@ const Contact = () => {
                            type="text" 
                            placeholder="John Doe"
                            required
-                           className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium"
+                           className="form-input"
                            onChange={(e) => setFormData({...formData, name: e.target.value})}
                          />
                       </div>
-                      <div className="space-y-2">
-                         <label className="text-sm font-bold text-text-main ml-2 flex items-center space-x-2">
+                      <div className="form-group">
+                         <label className="form-label">
                             <Mail size={16} className="text-primary" />
                             <span>Email Address</span>
                          </label>
@@ -145,15 +140,15 @@ const Contact = () => {
                            type="email" 
                            placeholder="john@example.com"
                            required
-                           className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium"
+                           className="form-input"
                            onChange={(e) => setFormData({...formData, email: e.target.value})}
                          />
                       </div>
                    </div>
 
                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                         <label className="text-sm font-bold text-text-main ml-2 flex items-center space-x-2">
+                      <div className="form-group">
+                         <label className="form-label">
                             <Phone size={16} className="text-primary" />
                             <span>Phone Number</span>
                          </label>
@@ -161,17 +156,17 @@ const Contact = () => {
                            type="tel" 
                            placeholder="+91 XXXXX XXXXX"
                            required
-                           className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium"
+                           className="form-input"
                            onChange={(e) => setFormData({...formData, phone: e.target.value})}
                          />
                       </div>
-                      <div className="space-y-2">
-                         <label className="text-sm font-bold text-text-main ml-2 flex items-center space-x-2">
+                      <div className="form-group">
+                         <label className="form-label">
                             <Calendar size={16} className="text-primary" />
                             <span>Select Service</span>
                          </label>
                          <select 
-                           className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium appearance-none"
+                           className="form-input appearance-none"
                            onChange={(e) => setFormData({...formData, service: e.target.value})}
                          >
                             <option value="">General Consultation</option>
@@ -183,15 +178,15 @@ const Contact = () => {
                       </div>
                    </div>
 
-                   <div className="space-y-2">
-                      <label className="text-sm font-bold text-text-main ml-2 flex items-center space-x-2">
+                   <div className="form-group">
+                      <label className="form-label">
                          <MessageSquare size={16} className="text-primary" />
                          <span>Message / Symptoms (Optional)</span>
                       </label>
                       <textarea 
                         rows="4"
                         placeholder="Tell us briefly about your concern..."
-                        className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium resize-none"
+                        className="form-input resize-none"
                         onChange={(e) => setFormData({...formData, message: e.target.value})}
                       ></textarea>
                    </div>

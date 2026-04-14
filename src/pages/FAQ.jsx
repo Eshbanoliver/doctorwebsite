@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FAQ.css';
 import SectionHeader from '../components/ui/SectionHeader';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, Search, MessageCircle } from 'lucide-react';
@@ -56,7 +57,7 @@ const FAQ = () => {
   );
 
   return (
-    <div className="pt-32 pb-20 min-height-screen bg-slate-50">
+    <div className="faq-page bg-slate-50 min-height-screen">
       <section className="section-padding relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full -z-10"></div>
@@ -69,12 +70,12 @@ const FAQ = () => {
           />
           
           {/* Search Bar */}
-          <div className="max-w-2xl mx-auto mb-20 relative">
+          <div className="faq-search-wrapper">
             <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-text-muted" />
             <input 
               type="text" 
               placeholder="Search for questions (e.g. Appointment, Insurance)..."
-              className="w-full pl-16 pr-8 py-5 rounded-2xl glass-card bg-white border-none shadow-lg outline-none focus:ring-2 focus:ring-primary/20 text-lg transition-all"
+              className="faq-search-input"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -88,14 +89,14 @@ const FAQ = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.05 }}
                   key={idx} 
-                  className={`glass-card border-none transition-all duration-500 rounded-3xl overflow-hidden ${activeIndex === idx ? 'bg-primary text-white shadow-2xl' : 'bg-white hover:shadow-xl'}`}
+                  className={`faq-item ${activeIndex === idx ? 'active' : ''}`}
                 >
                   <button 
                     onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
-                    className="w-full px-8 py-8 flex items-center justify-between text-left"
+                    className="faq-question-btn"
                   >
                     <div className="flex flex-col">
-                      <span className={`text-xs uppercase tracking-widest font-bold mb-2 opacity-60 ${activeIndex === idx ? 'text-white' : 'text-primary'}`}>
+                      <span className="faq-category">
                         {faq.category}
                       </span>
                       <span className="text-xl font-bold">{faq.question}</span>
@@ -113,7 +114,7 @@ const FAQ = () => {
                         className="overflow-hidden"
                       >
                         <div className="px-8 pb-10 pt-0 opacity-90 text-lg leading-relaxed">
-                          {faq.answer}
+                           {faq.answer}
                         </div>
                       </motion.div>
                     )}
@@ -121,14 +122,14 @@ const FAQ = () => {
                 </motion.div>
               ))
             ) : (
-              <div className="text-center py-20 glass-card bg-white rounded-3xl">
+              <div className="text-center py-20 faq-item">
                 <p className="text-xl text-text-muted">No questions found matching your search. Try different keywords.</p>
               </div>
             )}
           </div>
 
           {/* Contact Section */}
-          <div className="mt-20 max-w-4xl mx-auto text-center p-12 glass-card bg-grad-primary text-white rounded-[40px] shadow-2xl">
+          <div className="faq-cta">
              <h3 className="text-3xl font-bold mb-6">Still have questions?</h3>
              <p className="text-lg opacity-90 mb-10">
                If you couldn't find the answer you were looking for, feel free to reach out to us directly.
@@ -138,7 +139,7 @@ const FAQ = () => {
                    <MessageCircle size={24} />
                    <span>Chat with Us</span>
                 </button>
-                <button className="px-10 py-5 glass-card bg-white/20 border-white/30 rounded-2xl font-bold">
+                <button className="px-10 py-5 glass-card bg-white/20 border-white/30 rounded-2xl font-bold text-white">
                    Call Support
                 </button>
              </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Services.css';
 import SectionHeader from '../components/ui/SectionHeader';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -7,7 +8,7 @@ import {
   PlusCircle, 
   Zap, 
   Microscope, 
-  Shield, 
+  ShieldCheck, 
   Video, 
   X, 
   PhoneCall, 
@@ -75,7 +76,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="services-page">
       <section className="section-padding bg-slate-50 relative overflow-hidden">
         <div className="container">
           <SectionHeader 
@@ -96,30 +97,29 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 onClick={() => setSelectedService(service)}
-                className="glass-card group hover:bg-white hover:-translate-y-3 transition-all p-10 cursor-pointer"
+                className="service-card group"
               >
-                <div className={`w-20 h-20 rounded-2xl ${service.bg} flex items-center justify-center mb-10 group-hover:scale-110 transition-transform group-hover:rotate-6`}>
+                <div className={`service-icon-box ${service.bg}`}>
                   <service.icon size={40} className={service.color} />
                 </div>
                 <h3 className="text-2xl font-bold text-text-main mb-4">{service.title}</h3>
                 <p className="text-text-muted mb-8 italic">
                   "{service.desc}"
                 </p>
-                <button className="flex items-center space-x-3 text-primary font-bold">
+                <div className="flex items-center space-x-3 text-primary font-bold">
                    <span>Learn More</span>
                    <PlusCircle size={20} />
-                </button>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Specialist Consultations Detail (Separate section or big card) */}
-      <section className="section-padding bg-white">
+      {/* Specialist Consultations Detail */}
+      <section className="specialist-section">
         <div className="container">
-           <div className="glass-card bg-grad-primary p-12 lg:p-20 text-white rounded-[50px] overflow-hidden relative shadow-2xl">
-              <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-1/2"></div>
+           <div className="specialist-card">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
                  <div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-8">Specialist Consultations</h2>
@@ -142,7 +142,7 @@ const Services = () => {
                     <img 
                       src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=600" 
                       alt="Specialist" 
-                      className="rounded-[40px] shadow-2xl float-anim"
+                      className="rounded-[40px] shadow-2xl float-anim w-full"
                     />
                  </div>
               </div>
@@ -153,18 +153,12 @@ const Services = () => {
       {/* Service Detail Modal */}
       <AnimatePresence>
         {selectedService && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-text-main/60 backdrop-blur-md"
-            onClick={() => setSelectedService(null)}
-          >
+          <div className="modal-backdrop" onClick={() => setSelectedService(null)}>
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="glass-card bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto p-12 relative"
+              className="service-modal"
               onClick={(e) => e.stopPropagation()}
             >
               <button 
@@ -203,7 +197,7 @@ const Services = () => {
                  </button>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </div>

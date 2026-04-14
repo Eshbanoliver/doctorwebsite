@@ -1,4 +1,5 @@
 import React from 'react';
+import './About.css';
 import SectionHeader from '../components/ui/SectionHeader';
 import { motion } from 'framer-motion';
 import { Award, BookOpen, Clock, Shield, Stethoscope, Heart } from 'lucide-react';
@@ -30,11 +31,10 @@ const About = () => {
   ];
 
   return (
-    <div className="pt-32">
+    <div className="about-page">
       {/* Hero Section */}
-      <section className="section-padding bg-slate-50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform origin-top-right"></div>
-        <div className="container relative z-10">
+      <section className="about-hero">
+        <div className="container">
           <div className="max-w-3xl">
             <SectionHeader 
               subtitle="Get To Know Us"
@@ -50,21 +50,19 @@ const About = () => {
       {/* Intro Section with Image */}
       <section className="section-padding bg-white">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="about-intro-grid">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="about-image-wrapper"
             >
-              <div className="rounded-[40px] overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=800" 
-                  alt="Our Team" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-8 -right-8 p-6 glass-card bg-primary text-white rounded-3xl shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=800" 
+                alt="Our Team" 
+                className="w-full h-full object-cover"
+              />
+              <div className="badge-float">
                  <div className="text-3xl font-bold">15+</div>
                  <div className="text-xs uppercase tracking-widest font-bold opacity-80">Doctors on Board</div>
               </div>
@@ -130,9 +128,9 @@ const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-8 glass-card bg-white border-none text-center hover:bg-grad-primary hover:text-white transition-all group"
+                className="milestone-card group"
               >
-                <div className="text-4xl font-bold text-primary group-hover:text-white mb-4">{exp.year}</div>
+                <div className="milestone-year">{exp.year}</div>
                 <h4 className="text-xl font-bold mb-4">{exp.title}</h4>
                 <p className="text-sm opacity-80 leading-relaxed">{exp.desc}</p>
               </motion.div>

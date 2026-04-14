@@ -1,0 +1,87 @@
+/* Contact Page Specific Styles */
+.contact-page {
+  padding-top: 100px;
+}
+
+.info-card {
+  padding: 40px;
+  background: white;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon-box {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover .info-icon-box {
+  transform: scale(1.1);
+}
+
+.contact-form-card {
+  background: white;
+  padding: 48px;
+  border-radius: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--bg-color);
+  border: none;
+  border-radius: 16px;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+}
+
+.map-card {
+  background: white;
+  padding: 16px;
+  border-radius: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.hours-card {
+  padding: 40px;
+  background: var(--grad-primary);
+  color: white;
+  border-radius: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+}
