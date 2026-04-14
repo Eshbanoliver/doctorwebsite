@@ -1,0 +1,98 @@
+.floating-actions-container {
+  position: fixed;
+  bottom: 24px;
+  z-index: 9999;
+}
+
+.floating-left {
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.floating-right {
+  right: 24px;
+}
+
+.action-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+
+.action-btn:hover {
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn i, .action-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.action-btn:hover svg {
+  transform: rotate(12deg);
+}
+
+.whatsapp-btn {
+  background: #25D366;
+}
+
+.phone-btn {
+  background: var(--primary);
+}
+
+.scroll-btn {
+  background: white;
+  color: var(--primary);
+}
+
+.scroll-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Tooltip mock */
+.action-btn::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 120%;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translateX(-10px);
+}
+
+.floating-right .action-btn::before {
+  left: auto;
+  right: 120%;
+  transform: translateX(10px);
+}
+
+.action-btn:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .floating-left { left: 16px; bottom: 16px; }
+  .floating-right { right: 16px; bottom: 16px; }
+  .action-btn { width: 48px; height: 48px; border-radius: 16px; }
+}
