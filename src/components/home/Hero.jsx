@@ -35,13 +35,13 @@ const Hero = () => {
               Experience premium medical care with our liquid glass approach. We combine advanced technology with compassionate service for a healthier future.
             </p>
             
-            <div className="flex flex-wrap gap-6">
-              <Link to="/contact" className="px-10 py-5 bg-primary text-white rounded-2xl font-bold flex items-center space-x-3 hover:bg-primary-dark transition-all shadow-2xl hover:shadow-primary/40 hover:-translate-y-1">
-                <span>Book Appointment</span>
-                <ArrowRight size={22} />
+            <div className="flex flex-wrap gap-6 items-center">
+              <Link to="/contact" className="px-12 py-5 bg-primary text-white rounded-2xl font-bold inline-flex items-center space-x-3 hover:bg-primary-dark transition-all shadow-xl hover:shadow-primary/30 hover:-translate-y-1 no-underline whitespace-nowrap">
+                <span className="text-white">Book Appointment</span>
+                <ArrowRight size={22} className="text-white" />
               </Link>
-              <Link to="/services" className="px-10 py-5 glass-card text-text-main rounded-2xl font-bold hover:bg-white transition-all hover:-translate-y-1">
-                Explore Services
+              <Link to="/services" className="px-12 py-5 glass-card bg-white/40 text-text-main rounded-2xl font-bold inline-flex items-center hover:bg-white transition-all hover:-translate-y-1 no-underline whitespace-nowrap">
+                <span>Explore Services</span>
               </Link>
             </div>
 
