@@ -609,7 +609,7 @@
 .purpose-card {
   padding: 48px;
   border-radius: 40px;
-  background: white;
+  background: rgba(255, 255, 255, 0.05); /* Base fallback */
   border: 1px solid rgba(14, 165, 233, 0.08);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
@@ -623,15 +623,43 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 .purpose-card:hover {
   transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 40px 80px -15px rgba(14, 165, 233, 0.12);
-  border-color: rgba(14, 165, 233, 0.2);
+  box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.2);
+}
+
+.card-primary {
+  background: linear-gradient(135deg, #0ea5e9 0%, #4338ca 100%);
+  border: none;
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.25);
+}
+
+.card-teal {
+  background: linear-gradient(135deg, #0d9488 0%, #059669 100%);
+  border: none;
+  box-shadow: 0 20px 40px rgba(13, 148, 136, 0.25);
+}
+
+.card-primary .purpose-title,
+.card-teal .purpose-title {
+  color: white;
+}
+
+.card-primary .purpose-desc,
+.card-teal .purpose-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card-primary .purpose-icon-box,
+.card-teal .purpose-icon-box {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .purpose-card:hover::before {
@@ -671,9 +699,6 @@
 .purpose-card:hover .purpose-icon-box {
   transform: rotate(8deg) scale(1.1);
 }
-
-.card-primary .purpose-icon-box { background: var(--primary); }
-.card-teal .purpose-icon-box { background: var(--secondary); }
 
 .purpose-title {
   font-size: 1.75rem;
