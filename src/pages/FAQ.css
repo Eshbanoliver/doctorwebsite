@@ -161,21 +161,30 @@
 }
 
 .faq-accordion-item {
-  background: white;
-  border-radius: 24px;
-  border: 1px solid var(--glass-border);
+  background: #ffffff;
+  border-radius: 28px;
+  border: 1px solid rgba(0,0,0,0.06);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  margin-bottom: 20px;
+}
+
+.faq-accordion-item:hover {
+  transform: translateY(-8px);
+  border-color: rgba(14, 165, 233, 0.2);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
 }
 
 .faq-accordion-item.expanded {
   border-color: var(--primary);
-  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.05);
+  background: rgba(14, 165, 233, 0.02);
+  box-shadow: 0 40px 80px rgba(14, 165, 233, 0.08);
 }
 
 .faq-trigger-btn {
   width: 100%;
-  padding: 32px;
+  padding: 32px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -188,33 +197,43 @@
 .faq-trigger-content {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 .faq-item-category {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--secondary);
-  margin-bottom: 8px;
+  letter-spacing: 0.15em;
+  color: var(--primary);
+  opacity: 0.8;
 }
 
 .faq-item-question {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.375rem;
+  font-weight: 800;
   color: var(--text-main);
+  line-height: 1.4;
 }
 
 .faq-icon-badge {
-  padding: 8px;
-  border-radius: 9999px;
-  background: rgba(14, 165, 233, 0.05);
-  transition: all 0.3s ease;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+  margin-left: 20px;
 }
 
 .badge-active {
   background: var(--primary);
   color: white;
+  transform: rotate(180deg);
 }
 
 .faq-answer-container {
@@ -222,11 +241,10 @@
 }
 
 .faq-answer-text {
-  padding: 0 32px 32px;
+  padding: 0 40px 40px;
   font-size: 1.125rem;
   line-height: 1.8;
   color: var(--text-muted);
-  opacity: 0.9;
 }
 
 .faq-no-results {
