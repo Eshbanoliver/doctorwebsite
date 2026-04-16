@@ -18,6 +18,16 @@ import {
 const Services = () => {
   const [selectedService, setSelectedService] = useState(null);
 
+  // Mouse parallax effect for hero visual
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+    const x = (clientX / innerWidth - 0.5) * 30;
+    const y = (clientY / innerHeight - 0.5) * 30;
+    setMousePos({ x, y });
+  };
+
   const services = [
     {
       icon: Stethoscope,
@@ -77,17 +87,93 @@ const Services = () => {
 
   return (
     <div className="services-page-container">
-      <section className="services-hero-section highlight-bg">
-        <div className="container">
-          <SectionHeader 
-            subtitle="Expert Care"
-            title="Comprehensive Medical Services"
-            centered
-          />
-          <p className="services-hero-desc">
-            We provide a wide range of specialized medical services designed to meet the unique needs of every patient. Our approach is defined by precision, compassion, and innovation.
-          </p>
+      {/* Creative Hero Section */}
+      <section className="services-hero-section" onMouseMove={handleMouseMove}>
+        <div className="services-hero-mesh">
+          <div className="s-blob blob-1"></div>
+          <div className="s-blob blob-2"></div>
+        </div>
 
+        <div className="container">
+          <div className="services-hero-grid">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="services-hero-text-side"
+            >
+              <span className="services-hero-kicker">Precision in Practice</span>
+              <h1 className="services-hero-title">
+                Comprehensive <br />
+                <span className="gradient-text">Medical Solutions</span>
+              </h1>
+              <p className="services-hero-desc">
+                We provide a wide range of specialized medical services designed to meet 
+                the unique needs of every patient. Our approach is defined by precision 
+                medicine and the pursuit of long-term wellness.
+              </p>
+              
+              <div className="services-hero-badges">
+                <div className="hero-badge">
+                  <ShieldCheck size={20} />
+                  <span>ISO Certified</span>
+                </div>
+                <div className="hero-badge">
+                  <Activity size={20} />
+                  <span>24/7 Response</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="services-hero-visual-side">
+              <motion.div 
+                style={{ 
+                  rotateX: -mousePos.y / 2, 
+                  rotateY: mousePos.x / 2,
+                  perspective: 1000 
+                }}
+                className="services-visual-canvas"
+              >
+                <div className="visual-glass-stack">
+                  <img 
+                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200" 
+                    alt="Medical Tech" 
+                    className="services-main-img"
+                  />
+                  <div className="glass-reflection"></div>
+                </div>
+
+                {/* Floating Service Icons */}
+                <motion.div 
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="floating-service-icon s-1"
+                >
+                  <Stethoscope size={24} />
+                </motion.div>
+                <motion.div 
+                  animate={{ y: [0, 20, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="floating-service-icon s-2"
+                >
+                  <Microscope size={24} />
+                </motion.div>
+                <motion.div 
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="floating-service-icon s-3"
+                >
+                  <Zap size={24} />
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid Section */}
+      <section className="services-explore-section">
+        <div className="container">
           <div className="services-main-grid">
             {services.map((service, idx) => (
               <motion.div
@@ -104,7 +190,7 @@ const Services = () => {
                 </div>
                 <h3 className="service-explore-title">{service.title}</h3>
                 <p className="service-explore-desc">
-                  "{service.desc}"
+                  {service.desc}
                 </p>
                 <div className="service-explore-link">
                    <span>Learn More</span>
