@@ -114,12 +114,16 @@ const Services = () => {
               </p>
               
               <div className="services-hero-badges">
-                <div className="hero-badge">
-                  <ShieldCheck size={20} />
+                <div className="hero-badge iso">
+                  <div className="badge-icon-box blue">
+                    <ShieldCheck size={20} />
+                  </div>
                   <span>ISO Certified</span>
                 </div>
-                <div className="hero-badge">
-                  <Activity size={20} />
+                <div className="hero-badge response">
+                  <div className="badge-icon-box emerald">
+                    <Activity size={20} />
+                  </div>
                   <span>24/7 Response</span>
                 </div>
               </div>
