@@ -257,11 +257,12 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="pillar-card"
+              className="pillar-card pillar-card-glass"
             >
               <div className="pillar-icon"><Clock size={32} /></div>
               <h3>24/7 Availability</h3>
               <p>Reliable emergency response and round-the-clock digital consultations for peace of mind.</p>
+              <Zap size={120} className="pillar-bg-icon-decomposed" />
             </motion.div>
 
             <motion.div 
@@ -269,11 +270,12 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="pillar-card"
+              className="pillar-card pillar-card-glass"
             >
               <div className="pillar-icon"><BookOpen size={32} /></div>
               <h3>Academic Excellence</h3>
               <p>Ongoing research and training programs that keep our specialists at the forefront of medicine.</p>
+              <Sparkles size={120} className="pillar-bg-icon-decomposed" />
             </motion.div>
           </div>
         </div>
