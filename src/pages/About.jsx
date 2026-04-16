@@ -16,6 +16,16 @@ const About = () => {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
+  // Mouse parallax effect for the hero visual
+  const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+    const x = (clientX / innerWidth - 0.5) * 20;
+    const y = (clientY / innerHeight - 0.5) * 20;
+    setMousePos({ x, y });
+  };
+
   const milestones = [
     { year: '2010', title: 'Clinic Foundation', desc: 'Inception of a vision to redefine regional healthcare.' },
     { year: '2015', title: 'Advanced Diagnostics', desc: 'Integrated state-of-the-art imaging and laboratory facilities.' },
@@ -27,105 +37,198 @@ const About = () => {
     <div className="about-page-container">
       {/* Cinematic Hero */}
       <motion.section 
+        onMouseMove={handleMouseMove}
         style={{ opacity: heroOpacity, scale: heroScale }}
         className="about-hero-banner"
       >
-        <div className="about-hero-mesh"></div>
-        <div className="container">
-          <div className="about-hero-content">
-            <motion.span 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="about-kicker"
-            >
-              Excellence Since 2010
-            </motion.span>
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="about-main-title"
-            >
-              Crafting a Legacy of <br />
-              <span>Compassionate</span> Care
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="about-hero-sub"
-            >
-              We don't just treat symptoms; we care for people. Our journey is 
-              defined by precision medicine and the pursuit of patient wellness.
-            </motion.p>
-          </div>
+        <div className="hero-mesh-bg">
+          <div className="mesh-blob blob-1"></div>
+          <div className="mesh-blob blob-2"></div>
+          <div className="mesh-blob blob-3"></div>
         </div>
         
-        {/* Floating Icons */}
-        <div className="hero-floating-elements">
-          <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 5, repeat: Infinity }} className="f-icon f-1"><Heart size={32} /></motion.div>
-          <motion.div animate={{ y: [0, 30, 0] }} transition={{ duration: 7, repeat: Infinity }} className="f-icon f-2"><Stethoscope size={40} /></motion.div>
-          <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 6, repeat: Infinity }} className="f-icon f-3"><Zap size={24} /></motion.div>
+        <div className="container">
+          <div className="about-hero-grid">
+            <div className="about-hero-text-content">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="about-kicker-wrapper"
+              >
+                <span className="about-kicker">Excellence Since 2010</span>
+                <div className="kicker-line"></div>
+              </motion.div>
+              
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="about-main-title"
+              >
+                Pioneering the Future of <br />
+                <span className="gradient-text">Human-Centric</span> Healthcare
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="about-hero-sub"
+              >
+                MS Infinex isn't just a clinic; it's a sanctuary where cutting-edge 
+                medical engineering meets deep-rooted compassion. We are redefining 
+                the standard of patient care through innovation.
+              </motion.p>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="about-hero-stats"
+              >
+                <div className="hero-stat-item">
+                  <span className="stat-num">98%</span>
+                  <span className="stat-label">Patient Satisfaction</span>
+                </div>
+                <div className="stat-divider"></div>
+                <div className="hero-stat-item">
+                  <span className="stat-num">50+</span>
+                  <span className="stat-label">Expert Specialists</span>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="about-hero-visual-wrapper">
+              <motion.div 
+                style={{ 
+                  rotateX: -mousePos.y, 
+                  rotateY: mousePos.x,
+                  perspective: 1000 
+                }}
+                className="hero-main-visual"
+              >
+                <div className="visual-glass-frame">
+                  <img 
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200" 
+                    alt="Medical Innovation" 
+                    className="hero-innovation-img"
+                  />
+                  <div className="glass-overlay"></div>
+                </div>
+
+                {/* Floating Glass Badges */}
+                <motion.div 
+                  animate={{ y: [0, -15, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="floating-glass-card f-card-1"
+                >
+                  <div className="glass-icon"><Shield size={20} /></div>
+                  <div className="glass-info">
+                    <span>Certified Safety</span>
+                    <small>ISO 9001:2024</small>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [0, 15, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="floating-glass-card f-card-2"
+                >
+                  <div className="glass-icon"><Award size={20} /></div>
+                  <div className="glass-info">
+                    <span>Top Rated</span>
+                    <small>Best Clinic 2023</small>
+                  </div>
+                </motion.div>
+
+                {/* Decorative Elements */}
+                <div className="visual-circle circle-1"></div>
+                <div className="visual-circle circle-2"></div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </motion.section>
 
       {/* Story Section with Abstract Layout */}
       <section className="about-story-section">
+        <div className="story-bg-text">EST. 2010</div>
         <div className="container">
           <div className="story-layout">
             <motion.div 
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
               className="story-visual"
             >
-              <div className="story-img-card">
-                <div className="img-glow"></div>
+              <div className="story-img-main">
                 <img 
                   src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1200" 
                   alt="Our Facility" 
                   className="main-story-img"
                 />
-                <div className="stats-glass-badge">
-                  <span className="b-val">15+</span>
-                  <span className="b-lbl">Year Legacy</span>
+                <div className="img-glass-overlay"></div>
+                
+                {/* Embedded Floating Metrics */}
+                <div className="story-floating-badge">
+                  <div className="badge-icon"><Users size={24} /></div>
+                  <div className="badge-details">
+                    <span className="b-count">10k+</span>
+                    <span className="b-label">Treated Patients</span>
+                  </div>
                 </div>
               </div>
-              <div className="secondary-story-img">
+
+              <div className="story-img-secondary">
                 <img 
                   src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" 
                   alt="Specialist" 
                 />
+                <div className="img-glow-ring"></div>
               </div>
             </motion.div>
 
             <motion.div 
-              initial={{ opacity: 0, x: 60 }}
+              initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="story-text"
             >
-              <SectionHeader 
-                subtitle="The Genesis"
-                title="Redefining the Patient Experience"
-              />
+              <div className="story-header-creative">
+                <span className="story-pre-title">Our Visionary Genesis</span>
+                <h2 className="story-title">Bridging Science with <span className="highlight-text">Empathy</span></h2>
+                <div className="story-accent-line"></div>
+              </div>
+
               <p className="story-para">
-                Founded with a singular vision, our clinic bridges the gap between 
+                Founded with a singular vision, MS Infinex bridges the gap between 
                 advanced medical science and personalized care. We believe every patient 
                 deserves a healthcare journey that is seamless, transparent, and dignified.
               </p>
               
               <div className="story-pill-grid">
                 {[
-                  { icon: Target, text: 'Evidence-Based Medicine' },
-                  { icon: Shield, text: 'Uncompromising Safety' },
-                  { icon: Users, text: 'Community Focused' },
-                  { icon: Sparkles, text: 'Innovative Technology' }
+                  { icon: Target, text: 'Precision Diagnostics', sub: 'Evidence-based results' },
+                  { icon: Shield, text: 'Absolute Safety', sub: 'Uncompromising protocols' },
+                  { icon: Sparkles, text: 'Modern Tech', sub: 'Pioneering innovation' },
+                  { icon: Heart, text: 'Patient First', sub: 'Compassionate approach' }
                 ].map((pill, i) => (
-                  <div key={i} className="story-pill">
-                    <pill.icon size={18} />
-                    <span>{pill.text}</span>
-                  </div>
+                  <motion.div 
+                    key={i} 
+                    whileHover={{ y: -5 }}
+                    className="story-pill-card"
+                  >
+                    <div className="pill-icon-box">
+                      <pill.icon size={22} />
+                    </div>
+                    <div className="pill-content">
+                      <span className="pill-title">{pill.text}</span>
+                      <span className="pill-sub">{pill.sub}</span>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
