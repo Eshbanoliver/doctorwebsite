@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Contact.css';
-import SectionHeader from '../components/ui/SectionHeader';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Send, Calendar, Clock, User, MessageSquare } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Calendar, User, MessageSquare } from 'lucide-react';
+import CTASection from '../components/home/CTASection';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +12,16 @@ const Contact = () => {
     service: '',
     message: ''
   });
+
+  // Mouse parallax effect for hero visual
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+    const x = (clientX / innerWidth - 0.5) * 20;
+    const y = (clientY / innerHeight - 0.5) * 20;
+    setMousePos({ x, y });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,36 +33,121 @@ const Contact = () => {
       icon: MapPin,
       title: 'Our Location',
       details: 'Udaipur, Rajasthan 313001',
-      color: 'bg-blue-500'
+      color: 'theme-blue'
     },
     {
       icon: Phone,
       title: 'Phone Number',
-      details: '+91 (Leave Blank)',
-      color: 'bg-teal-500'
+      details: '+91 (Primary Line)',
+      color: 'theme-teal'
     },
     {
       icon: Mail,
       title: 'Email Address',
       details: 'contact@doctor.com',
-      color: 'bg-rose-500'
+      color: 'theme-rose'
     }
   ];
 
   return (
     <div className="contact-page-wrapper">
-      <section className="contact-hero-section">
-        {/* Decorative Background */}
-        <div className="contact-bg-decoration"></div>
-        
-        <div className="container">
-          <SectionHeader 
-            subtitle="Connect With Us"
-            title="We're Here To Listen & Heal"
-            centered
-          />
+      {/* Creative Hero Section */}
+      <section className="contact-hero-section" onMouseMove={handleMouseMove}>
+        <div className="contact-hero-mesh">
+          <div className="c-blob blob-1"></div>
+          <div className="c-blob blob-2"></div>
+        </div>
 
-          <div className="contact-info-grid">
+        <div className="container">
+          <div className="contact-hero-grid">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="contact-hero-text"
+            >
+              <span className="contact-kicker">Get in Touch</span>
+              <h1 className="contact-hero-title">
+                We're Here To <br />
+                <span className="gradient-text">Listen & Heal</span>
+              </h1>
+              <p className="contact-hero-desc">
+                Whether you have a medical query, need an appointment, or want 
+                to share feedback—our team is ready to assist you 24/7.
+              </p>
+
+              <div className="contact-quick-actions">
+                <div className="quick-action-pill">
+                  <div className="pill-icon-box-v2 blue">
+                    <Phone size={18} />
+                  </div>
+                  <div className="pill-text-v2">
+                    <small>Urgent Care</small>
+                    <span>+91 XXXXX XXXXX</span>
+                  </div>
+                </div>
+                <div className="quick-action-pill">
+                  <div className="pill-icon-box-v2 emerald">
+                    <Mail size={18} />
+                  </div>
+                  <div className="pill-text-v2">
+                    <small>Email Us</small>
+                    <span>contact@doctor.com</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="contact-hero-visual">
+              <motion.div 
+                style={{ 
+                  rotateX: -mousePos.y / 2, 
+                  rotateY: mousePos.x / 2,
+                  perspective: 1000 
+                }}
+                className="contact-visual-canvas"
+              >
+                <div className="contact-glass-visual">
+                   <div className="visual-map-overlay">
+                      <MapPin size={64} className="map-pin-glow" />
+                   </div>
+                   <div className="visual-stats">
+                      <div className="v-stat">
+                         <strong>10k+</strong>
+                         <span>Patients</span>
+                      </div>
+                      <div className="v-stat">
+                         <strong>15+</strong>
+                         <span>Specialists</span>
+                      </div>
+                   </div>
+                </div>
+                
+                {/* Floating Elements */}
+                <motion.div 
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="floating-contact-element e-1"
+                >
+                  <MessageSquare size={20} />
+                </motion.div>
+                <motion.div 
+                  animate={{ y: [0, 20, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="floating-contact-element e-2"
+                >
+                  <Calendar size={20} />
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Info & Form Section */}
+      <section className="contact-main-section-v2">
+        <div className="container">
+          <div className="contact-info-grid-v2">
             {contactInfos.map((info, idx) => (
               <motion.div
                 key={idx}
@@ -60,150 +155,96 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="contact-info-card group"
+                className="contact-info-card-v2"
               >
-                <div className={`info-icon-container ${info.color}`}>
-                  <info.icon size={30} className="icon-white" />
+                <div className={`info-icon-v2 ${info.color}`}>
+                  <info.icon size={24} />
                 </div>
-                <h4 className="info-card-title">{info.title}</h4>
-                <p className="info-card-details">{info.details}</p>
+                <div className="info-content-v2">
+                  <h4>{info.title}</h4>
+                  <p>{info.details}</p>
+                </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="contact-main-layout">
-             {/* Map Placeholder */}
-             <motion.div
-               initial={{ opacity: 0, x: -50 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
-               className="contact-side-info"
-             >
-                <div className="contact-map-card">
-                   <div className="map-placeholder-box">
-                      <MapPin size={60} className="map-icon-bg" />
-                      <span className="map-text-sub">Google Map Placeholder</span>
+          <div className="contact-layout-split-v2">
+             <div className="contact-hours-column">
+                <div className="contact-map-mini">
+                   <div className="map-placeholder-mini">
+                      <MapPin size={40} className="mini-pin" />
+                      <span>Udaipur Centre</span>
                    </div>
                 </div>
 
-                <div className="contact-hours-card">
-                   <h3 className="hours-title">Appointment Hours</h3>
-                   <div className="hours-list">
-                      <div className="hours-row">
-                         <span className="day-text">Monday - Saturday</span>
-                         <span className="time-text">9:00 AM - 8:00 PM</span>
+                <div className="hours-card-v2">
+                   <h3 className="hours-title-v2">Appointment Hours</h3>
+                   <div className="hours-rows-v2">
+                      <div className="h-row">
+                         <span>Mon - Sat</span>
+                         <strong>9:00 AM - 8:00 PM</strong>
                       </div>
-                      <div className="hours-row">
-                         <span className="day-text">Sunday</span>
-                         <span className="time-text text-closed">Closed</span>
+                      <div className="h-row">
+                         <span>Sunday</span>
+                         <strong className="closed">Closed</strong>
                       </div>
-                      <div className="hours-row no-border">
-                         <span className="day-text">Emergency</span>
-                         <span className="time-text text-emergency">24/7 Service</span>
+                      <div className="h-row emergency">
+                         <span>Emergency</span>
+                         <strong>24/7 Available</strong>
                       </div>
                    </div>
                 </div>
-             </motion.div>
+             </div>
 
-             {/* Contact/Appointment Form */}
-             <motion.div
-               initial={{ opacity: 0, x: 50 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
-               className="contact-form-container glass-card"
-             >
-                <div className="form-header">
-                   <h3 className="form-main-title">Book Your Visit</h3>
-                   <p className="form-sub-text">Fill in the details below and we will confirm your slot within 30 minutes.</p>
+             <div className="contact-form-column">
+                <div className="form-glass-card">
+                  <div className="form-v2-header">
+                     <h3>Book Your Visit</h3>
+                     <p>confirm your slot within 30 minutes.</p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="v2-form">
+                     <div className="v2-form-row">
+                        <div className="v2-input-group">
+                           <label><User size={14} /> Name</label>
+                           <input type="text" placeholder="John Doe" required />
+                        </div>
+                        <div className="v2-input-group">
+                           <label><Mail size={14} /> Email</label>
+                           <input type="email" placeholder="john@email.com" required />
+                        </div>
+                     </div>
+                     <div className="v2-form-row">
+                        <div className="v2-input-group">
+                           <label><Phone size={14} /> Phone</label>
+                           <input type="tel" placeholder="+91 XXXXX XXXXX" required />
+                        </div>
+                        <div className="v2-input-group">
+                           <label><Calendar size={14} /> Service</label>
+                           <select>
+                              <option>General Consultation</option>
+                              <option>Health Checkup</option>
+                              <option>Diagnostics</option>
+                              <option>Emergency Care</option>
+                           </select>
+                        </div>
+                     </div>
+                     <div className="v2-input-group">
+                        <label><MessageSquare size={14} /> Message</label>
+                        <textarea rows="4" placeholder="Briefly describe your concern..."></textarea>
+                     </div>
+                     <button type="submit" className="btn-v2-submit">
+                        <Send size={20} />
+                        <span>Send Request</span>
+                     </button>
+                  </form>
                 </div>
-
-                <form onSubmit={handleSubmit} className="appointment-form">
-                   <div className="form-row-grid">
-                      <div className="form-input-group">
-                         <label className="form-input-label">
-                            <User size={16} className="label-icon" />
-                            <span>Full Name</span>
-                         </label>
-                         <input 
-                           type="text" 
-                           placeholder="John Doe"
-                           required
-                           className="form-control-input"
-                           onChange={(e) => setFormData({...formData, name: e.target.value})}
-                         />
-                      </div>
-                      <div className="form-input-group">
-                         <label className="form-input-label">
-                            <Mail size={16} className="label-icon" />
-                            <span>Email Address</span>
-                         </label>
-                         <input 
-                           type="email" 
-                           placeholder="john@example.com"
-                           required
-                           className="form-control-input"
-                           onChange={(e) => setFormData({...formData, email: e.target.value})}
-                         />
-                      </div>
-                   </div>
-
-                   <div className="form-row-grid">
-                      <div className="form-input-group">
-                         <label className="form-input-label">
-                            <Phone size={16} className="label-icon" />
-                            <span>Phone Number</span>
-                         </label>
-                         <input 
-                           type="tel" 
-                           placeholder="+91 XXXXX XXXXX"
-                           required
-                           className="form-control-input"
-                           onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                         />
-                      </div>
-                      <div className="form-input-group">
-                         <label className="form-input-label">
-                            <Calendar size={16} className="label-icon" />
-                            <span>Select Service</span>
-                         </label>
-                         <select 
-                           className="form-control-input select-styled"
-                           onChange={(e) => setFormData({...formData, service: e.target.value})}
-                         >
-                            <option value="">General Consultation</option>
-                            <option value="">Health Checkup</option>
-                            <option value="">Diagnostics</option>
-                            <option value="">Emergency Care</option>
-                            <option value="">Specialist Consultation</option>
-                         </select>
-                      </div>
-                   </div>
-
-                   <div className="form-input-group">
-                      <label className="form-input-label">
-                         <MessageSquare size={16} className="label-icon" />
-                         <span>Message / Symptoms (Optional)</span>
-                      </label>
-                      <textarea 
-                        rows="4"
-                        placeholder="Tell us briefly about your concern..."
-                        className="form-control-input textarea-styled"
-                        onChange={(e) => setFormData({...formData, message: e.target.value})}
-                      ></textarea>
-                   </div>
-
-                   <button 
-                     type="submit" 
-                     className="btn-submit-appointment"
-                   >
-                      <Send size={24} />
-                      <span>Request Appointment</span>
-                   </button>
-                </form>
-             </motion.div>
+             </div>
           </div>
         </div>
       </section>
+
+      <CTASection />
     </div>
   );
 };
