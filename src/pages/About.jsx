@@ -9,6 +9,7 @@ import SectionHeader from '../components/ui/SectionHeader';
 import MissionVision from '../components/home/MissionVision';
 import CoreValues from '../components/home/CoreValues';
 import DoctorPreview from '../components/home/DoctorPreview';
+import CTASection from '../components/home/CTASection';
 import './About.css';
 
 const About = () => {
@@ -351,6 +352,7 @@ const About = () => {
       <DoctorPreview />
       <MissionVision />
       <CoreValues />
+      <CTASection />
     </div>
   );
 };
