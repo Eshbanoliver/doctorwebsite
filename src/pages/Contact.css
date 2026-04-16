@@ -219,7 +219,13 @@
   border: 1px solid rgba(0,0,0,0.03);
   box-shadow: 0 10px 30px rgba(0,0,0,0.02);
   transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
+
+.contact-info-card-v2.theme-blue { background: linear-gradient(135deg, #ffffff 0%, rgba(14, 165, 233, 0.03) 100%); }
+.contact-info-card-v2.theme-teal { background: linear-gradient(135deg, #ffffff 0%, rgba(20, 184, 166, 0.03) 100%); }
+.contact-info-card-v2.theme-rose { background: linear-gradient(135deg, #ffffff 0%, rgba(244, 63, 94, 0.03) 100%); }
 
 .contact-info-card-v2:hover {
   transform: translateY(-8px);
@@ -235,11 +241,12 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.04);
 }
 
-.info-icon-v2.theme-blue { background: rgba(14, 165, 233, 0.1); color: var(--primary); }
-.info-icon-v2.theme-teal { background: rgba(20, 184, 166, 0.1); color: #14b8a6; }
-.info-icon-v2.theme-rose { background: rgba(244, 63, 94, 0.1); color: #f43f5e; }
+.info-icon-v2.theme-blue { background: rgba(14, 165, 233, 0.12); color: var(--primary); }
+.info-icon-v2.theme-teal { background: rgba(20, 184, 166, 0.12); color: #14b8a6; }
+.info-icon-v2.theme-rose { background: rgba(244, 63, 94, 0.12); color: #f43f5e; }
 
 .info-content-v2 h4 { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; color: var(--text-main); }
 .info-content-v2 p { font-size: 1rem; color: var(--text-muted); font-weight: 500; }

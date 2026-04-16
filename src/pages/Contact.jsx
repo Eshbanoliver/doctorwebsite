@@ -33,19 +33,19 @@ const Contact = () => {
       icon: MapPin,
       title: 'Our Location',
       details: 'Udaipur, Rajasthan 313001',
-      color: 'theme-blue'
+      theme: 'theme-blue'
     },
     {
       icon: Phone,
       title: 'Phone Number',
       details: '+91 (Primary Line)',
-      color: 'theme-teal'
+      theme: 'theme-teal'
     },
     {
       icon: Mail,
       title: 'Email Address',
       details: 'contact@doctor.com',
-      color: 'theme-rose'
+      theme: 'theme-rose'
     }
   ];
 
@@ -155,9 +155,9 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="contact-info-card-v2"
+                className={`contact-info-card-v2 ${info.theme}`}
               >
-                <div className={`info-icon-v2 ${info.color}`}>
+                <div className={`info-icon-v2 ${info.theme}`}>
                   <info.icon size={24} />
                 </div>
                 <div className="info-content-v2">
