@@ -286,30 +286,64 @@ const About = () => {
         <div className="container">
           <div className="milestones-header">
             <SectionHeader 
-              subtitle="The Journey"
+              subtitle="The Chronicle"
               title="A Decade of Trust"
               centered
             />
           </div>
-          <div className="timeline-v2">
-            <div className="timeline-line"></div>
-            {milestones.map((m, i) => (
+          
+          <div className="timeline-wrapper-v3">
+            {/* The Connecting Path with Scroll Progress */}
+            <div className="timeline-main-line">
               <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`timeline-node ${i % 2 === 0 ? 'left' : 'right'}`}
-              >
-                <div className="node-content">
-                  <div className="node-year">{m.year}</div>
-                  <h4>{m.title}</h4>
-                  <p>{m.desc}</p>
+                className="timeline-progress-bar"
+                style={{ scaleY: scrollYProgress }}
+              />
+            </div>
+
+            <div className="timeline-items-column">
+              {milestones.map((m, i) => (
+                <div key={i} className={`timeline-row ${i % 2 === 0 ? 'left' : 'right'}`}>
+                  {/* The Anchor Year (Large/Floating) */}
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 0.1, scale: 1 }}
+                    className="floating-year-bg"
+                  >
+                    {m.year}
+                  </motion.div>
+
+                  {/* The Node Content Card */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, cubicBezier: [0.16, 1, 0.3, 1] }}
+                    className="milestone-card-glass"
+                  >
+                    <div className="milestone-card-header">
+                      <span className="milestone-tag">{m.year}</span>
+                      <div className="milestone-icon-circle">
+                        {i === 0 && <Target size={20} />}
+                        {i === 1 && <Sparkles size={20} />}
+                        {i === 2 && <Users size={20} />}
+                        {i === 3 && <Zap size={20} />}
+                      </div>
+                    </div>
+                    <h4>{m.title}</h4>
+                    <p>{m.desc}</p>
+                    
+                    <div className="milestone-line-connector"></div>
+                  </motion.div>
+
+                  {/* Central Node Dot */}
+                  <div className="timeline-central-dot">
+                    <div className="dot-inner"></div>
+                    <div className="dot-ripple"></div>
+                  </div>
                 </div>
-                <div className="node-dot"></div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
