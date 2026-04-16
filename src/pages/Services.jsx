@@ -34,8 +34,8 @@ const Services = () => {
       title: 'General Consultation',
       desc: 'Expert general checkups and health guidance for all age groups. Our primary care physicians are dedicated to your overall well-being.',
       detailed_desc: 'Our general consultation service provides a comprehensive assessment of your health. From routine physicals to managing chronic conditions, we use a patient-centered approach to ensure you receive the best care. We focus on listening, diagnosing, and creating a personalized health plan for you.',
-      color: 'text-blue-500',
-      bg: 'bg-blue-50',
+      color: 'theme-blue',
+      bg: 'theme-blue',
       benefits: ['Routine Physicals', 'Vaccinations', 'Chronic Disease Management', 'Health Screenings']
     },
     {
@@ -43,8 +43,8 @@ const Services = () => {
       title: 'Health Checkups',
       desc: 'Comprehensive full-body health screenings and diagnostic tests tailored to your age and risk factors.',
       detailed_desc: 'Prevention is better than cure. Our executive health checkups are designed to detect potential health issues before they become serious. We offer packages that include blood tests, imaging, and specialist consultations to give you a complete picture of your health.',
-      color: 'text-teal-500',
-      bg: 'bg-teal-50',
+      color: 'theme-teal',
+      bg: 'theme-teal',
       benefits: ['Executive Health Pakages', 'Age-Specific Screenings', 'Nutritional Counseling', 'Lifestyle Assessment']
     },
     {
@@ -52,8 +52,8 @@ const Services = () => {
       title: 'Emergency Care',
       desc: 'Quick and efficient 24/7 medical response for critical situations. Our trauma team is always on standby.',
       detailed_desc: 'In a medical emergency, every second counts. Our emergency department is equipped with advanced life-support systems and staffed by trauma specialists who can handle everything from cardiac arrests to severe accidents. We prioritize immediate triage and specialized care.',
-      color: 'text-rose-500',
-      bg: 'bg-rose-50',
+      color: 'theme-rose',
+      bg: 'theme-rose',
       benefits: ['24/7 Trauma Service', 'Ambulance Support', 'Critical Care Unit', 'Immediate Triage']
     },
     {
@@ -61,8 +61,8 @@ const Services = () => {
       title: 'Diagnostics',
       desc: 'Advanced laboratory and imaging services for accurate results. Fast turnaround times for all tests.',
       detailed_desc: 'Accurate diagnosis is the foundation of effective treatment. Our diagnostic center features state-of-the-art laboratory equipment and imaging technology (X-ray, Ultrasound, CT Scan). Our pathologists and radiologists work closely to provide rapid and precise results.',
-      color: 'text-indigo-500',
-      bg: 'bg-indigo-50',
+      color: 'theme-indigo',
+      bg: 'theme-indigo',
       benefits: ['Digital X-Ray/Ultrasound', 'Pathology Lab', 'ECG/TMT Testing', 'Biopsy Services']
     },
     {
@@ -70,8 +70,8 @@ const Services = () => {
       title: 'Preventive Healthcare',
       desc: 'Proactive strategies and wellness programs to maintain long-term health and prevent diseases.',
       detailed_desc: 'Our preventive healthcare programs focus on education and early intervention. We help you manage risks like stress, obesity, and inactivity through guided programs. Our goal is to empower you with the knowledge and tools to stay healthy.',
-      color: 'text-emerald-500',
-      bg: 'bg-emerald-50',
+      color: 'theme-emerald',
+      bg: 'theme-emerald',
       benefits: ['Wellness Coaching', 'Immunization Charts', 'Anti-Smoking Programs', 'Heart Health Focus']
     },
     {
@@ -79,8 +79,8 @@ const Services = () => {
       title: 'Online Consultation',
       desc: 'Connect with experts from the comfort of your home via our secure video consultation platform.',
       detailed_desc: 'Get expert medical advice without leaving your home. Our secure tele-health platform allows you to upload reports, chat with doctors, and receive digital prescriptions. Ideal for follow-ups, minor ailments, and mental health counseling.',
-      color: 'text-amber-500',
-      bg: 'bg-amber-50',
+      color: 'theme-amber',
+      bg: 'theme-amber',
       benefits: ['Secure Video Link', 'Digital Prescriptions', 'Record Management', 'Time-Saving']
     }
   ];
@@ -189,8 +189,8 @@ const Services = () => {
                 onClick={() => setSelectedService(service)}
                 className={`service-explore-card ${service.bg} group`}
               >
-                <div className={`service-icon-box ${service.bg}`}>
-                  <service.icon size={40} className={service.color} />
+                <div className="service-icon-box">
+                  <service.icon size={40} />
                 </div>
                 <h3 className="service-explore-title">{service.title}</h3>
                 <p className="service-explore-desc">
