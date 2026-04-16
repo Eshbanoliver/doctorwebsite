@@ -14,6 +14,7 @@ import {
   PhoneCall, 
   CheckSquare 
 } from 'lucide-react';
+import CTASection from '../components/home/CTASection';
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -290,6 +291,7 @@ const Services = () => {
           </div>
         )}
       </AnimatePresence>
+      <CTASection />
     </div>
   );
 };
