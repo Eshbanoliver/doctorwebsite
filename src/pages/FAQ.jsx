@@ -31,23 +31,33 @@ const FAQ = () => {
     },
     {
       category: 'General',
-      question: 'Is parking available at the clinic?',
-      answer: 'Yes, we have dedicated free parking for patients and their families right in front of the clinic premises in Udaipur.'
+      question: 'Do I need a referral to see a specialist?',
+      answer: 'No, you don\'t strictly need a referral to see our specialists. However, having a summary from your primary care doctor can help our specialists understand your medical history better.'
+    },
+    {
+      category: 'Reports',
+      question: 'How can I access my medical reports online?',
+      answer: 'Once your reports are ready, we send a digital copy via WhatsApp and Email. You can also view and download your entire medical history by logging into our Patient Portal using your registered mobile number.'
     },
     {
       category: 'Services',
-      question: 'Do you provide home sample collection for lab tests?',
-      answer: 'Yes, we offer home sample collection services within a 10km radius of Udaipur city. You can book this service at least 12 hours in advance.'
+      question: 'How long does a typical full-body checkup take?',
+      answer: 'A comprehensive full-body health screening usually takes between 3 to 5 hours. This includes blood tests, imaging (like X-ray or Ultrasound), and a final consultation with the doctor.'
     },
     {
-      category: 'General',
-      question: 'What should I bring for my first visit?',
-      answer: 'Please bring a valid ID card, any previous medical records or prescriptions, and your insurance card if applicable.'
+      category: 'Appointments',
+      question: 'What is the cancellation policy?',
+      answer: 'We request that you cancel or reschedule at least 4 hours in advance. This allows us to offer the slot to other patients who may need urgent care.'
+    },
+    {
+      category: 'Facility',
+      question: 'Is there a pharmacy available on-site?',
+      answer: 'Yes, we have an in-house pharmacy that is stocked with all essential medicines and healthcare products, making it convenient for you to get your prescriptions filled immediately after consultation.'
     },
     {
       category: 'Emergency',
       question: 'What should I do in case of a medical emergency at night?',
-      answer: 'Call our emergency helpline immediately. Our trauma team will guide you on the next steps or dispatch an ambulance if required.'
+      answer: 'Call our 24/7 emergency helpline immediately. Our trauma team will guide you on the next steps or dispatch an ambulance if required.'
     }
   ];
 
