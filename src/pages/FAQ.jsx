@@ -57,29 +57,68 @@ const FAQ = () => {
   );
 
   return (
-    <div className="faq-page-wrapper highlight-bg min-height-screen">
-      <section className="faq-main-section">
-        {/* Decorative elements */}
-        <div className="faq-bg-blob"></div>
-        
+    <div className="faq-page-wrapper">
+      {/* Creative FAQ Hero */}
+      <section className="faq-hero-section">
+        <div className="faq-hero-mesh">
+          <div className="f-blob f-blob-1"></div>
+          <div className="f-blob f-blob-2"></div>
+        </div>
+
         <div className="container">
-          <SectionHeader 
-            subtitle="Help Center"
-            title="Everything You Need To Know"
-            centered
-          />
-          
-          {/* Search Bar */}
-          <div className="faq-search-box">
-            <Search className="faq-search-icon" />
-            <input 
-              type="text" 
-              placeholder="Search for questions (e.g. Appointment, Insurance)..."
-              className="faq-search-input-field"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
+          <div className="faq-hero-content">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="faq-kicker">Help Center</span>
+              <h1 className="faq-hero-title">
+                Everything You <br />
+                <span className="gradient-text">Need To Know</span>
+              </h1>
+              <p className="faq-hero-desc">
+                Find answers to common questions about our medical services, 
+                appointments, and patient care standards.
+              </p>
+
+              {/* Enhanced Search Experience */}
+              <div className="faq-hero-search-wrapper">
+                <div className="search-pill-container">
+                  <Search className="search-pill-icon" />
+                  <input 
+                    type="text" 
+                    placeholder="Search for questions (e.g. Appointment, Insurance)..."
+                    className="search-pill-input"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  <div className="search-shortcut">
+                    <span>⌘K</span>
+                  </div>
+                </div>
+
+                <div className="quick-tags">
+                  <span className="tags-label">Quick Search:</span>
+                  {['General', 'Emergency', 'Insurance', 'Reports'].map((tag) => (
+                    <button 
+                      key={tag} 
+                      className="tag-btn"
+                      onClick={() => setSearchTerm(tag)}
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </div>
+        </div>
+      </section>
+
+      <section className="faq-list-section">
+        <div className="container">
+          {/* Categories / Filter maybe? */}
 
           <div className="faq-accordion-list">
             {filteredFaqs.length > 0 ? (
