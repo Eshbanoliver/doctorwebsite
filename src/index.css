@@ -62,9 +62,21 @@ body {
   padding: 100px 5%;
 }
 
+@media (max-width: 1024px) {
+  .section-padding {
+    padding: 80px 5%;
+  }
+}
+
 @media (max-width: 768px) {
   .section-padding {
     padding: 60px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 40px 16px;
   }
 }
 
@@ -122,11 +134,18 @@ body {
   color: var(--text-main);
   margin-bottom: 24px;
   line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 @media (min-width: 768px) {
   .section-title {
     font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.875rem;
   }
 }
 
@@ -275,11 +294,25 @@ body {
   width: 100%;
   padding: 16px;
   background: var(--primary);
-  color: white;
+  color: white !important;
   text-align: center;
   border-radius: 16px;
   font-weight: 700;
   box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 12px 20px;
+  }
+  .navbar-brand-name {
+    font-size: 1.25rem;
+  }
+  .navbar-mobile-menu {
+    left: 16px;
+    right: 16px;
+    padding: 24px;
+  }
 }
 
 /* Main Footer Styles - Modernized Premium Dark Theme */

@@ -91,12 +91,25 @@
 }
 
 .about-main-title {
-  font-size: 4.5rem;
-  font-weight: 900;
+  font-size: 2.75rem;
+  font-weight: 950;
   line-height: 1.1;
   color: var(--text-main);
-  margin-bottom: 32px;
-  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 640px) {
+  .about-main-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-main-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+  }
 }
 
 .about-hero-sub {
@@ -275,11 +288,13 @@
 }
 
 @media (max-width: 640px) {
-  .about-main-title { font-size: 2.75rem; }
-  .about-hero-stats { flex-direction: column; gap: 20px; }
+  .about-main-title { font-size: 2.5rem; }
+  .about-hero-stats { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 30px; }
   .stat-divider { display: none; }
   
-  .f-card-1, .f-card-2 { position: static; margin-bottom: 20px; width: 100%; }
+  .f-card-1, .f-card-2 { position: absolute; width: auto; }
+  .f-card-1 { top: 5%; left: -10px; padding: 10px 16px; scale: 0.8; }
+  .f-card-2 { bottom: 5%; right: -10px; padding: 10px 16px; scale: 0.8; }
 }
 
 /* Intro Section */
@@ -440,10 +455,17 @@
 }
 
 .story-title {
-  font-size: 3.5rem;
+  font-size: 2.25rem;
   font-weight: 900;
   color: var(--text-main);
-  line-height: 1.2;
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  .story-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
 }
 
 .highlight-text {

@@ -92,7 +92,8 @@
 }
 
 @media (max-width: 768px) {
-  .floating-left { left: 16px; bottom: 16px; }
-  .floating-right { right: 16px; bottom: 16px; }
-  .action-btn { width: 48px; height: 48px; border-radius: 16px; }
+  .floating-left { left: 12px; bottom: 12px; }
+  .floating-right { right: 12px; bottom: 12px; }
+  .action-btn { width: 44px; height: 44px; border-radius: 14px; }
+  .action-btn::before { display: none; } /* Hide tooltips on mobile */
 }

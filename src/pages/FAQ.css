@@ -52,11 +52,24 @@
 }
 
 .faq-hero-title {
-  font-size: 4rem;
-  font-weight: 900;
+  font-size: 2.75rem;
+  font-weight: 950;
   color: var(--text-main);
   line-height: 1.1;
   margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 640px) {
+  .faq-hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .faq-hero-title {
+    font-size: 4.25rem;
+  }
 }
 
 .faq-hero-desc {
@@ -77,12 +90,18 @@
   display: flex;
   align-items: center;
   background: white;
-  padding: 10px 10px 10px 32px;
+  padding: 8px 8px 8px 24px;
   border-radius: 99px;
   border: 1px solid rgba(0,0,0,0.08);
   box-shadow: 0 30px 60px rgba(0,0,0,0.05);
   margin-bottom: 32px;
   transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .search-pill-container {
+    padding: 10px 10px 10px 32px;
+  }
 }
 
 .search-pill-container:focus-within {
@@ -106,13 +125,20 @@
 }
 
 .search-shortcut {
-  padding: 8px 16px;
-  background: #f1f5f9;
-  border-radius: 12px;
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .search-shortcut {
+    display: block;
+    padding: 8px 16px;
+    background: #f1f5f9;
+    border-radius: 12px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
 }
 
 .quick-tags {

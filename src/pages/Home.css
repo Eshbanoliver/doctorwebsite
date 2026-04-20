@@ -74,17 +74,24 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   font-weight: 800;
   color: var(--text-main);
-  line-height: 1.05;
-  margin-bottom: 32px;
+  line-height: 1.1;
+  margin-bottom: 24px;
   letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .hero-title {
     font-size: 5.5rem;
+    line-height: 1.05;
   }
 }
 
@@ -156,7 +163,13 @@
 .hero-stats-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 48px;
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .hero-stats-row {
+    gap: 48px;
+  }
 }
 
 .stat-card {
@@ -240,10 +253,19 @@
 
 .hero-main-img {
   width: 100%;
-  height: 700px;
+  height: auto;
+  aspect-ratio: 4/5;
+  max-height: 700px;
   object-fit: cover;
-  border-radius: 60px;
+  border-radius: 40px;
   box-shadow: 0 50px 100px -20px rgba(0,0,0,0.25);
+}
+
+@media (min-width: 1024px) {
+  .hero-main-img {
+    height: 700px;
+    border-radius: 60px;
+  }
 }
 
 .float-card {
@@ -261,12 +283,45 @@
 
 .accuracy-card {
   top: 40px;
-  right: -60px;
+  right: -20px;
 }
 
 .patient-card {
-  bottom: 80px;
-  left: -80px;
+  bottom: 40px;
+  left: -20px;
+}
+
+@media (min-width: 1200px) {
+  .accuracy-card {
+    right: -60px;
+  }
+  .patient-card {
+    bottom: 80px;
+    left: -80px;
+  }
+}
+
+@media (max-width: 640px) {
+  .float-card {
+    padding: 16px;
+    gap: 12px;
+    border-radius: 20px;
+  }
+  .float-icon-box {
+    width: 44px;
+    height: 44px;
+  }
+  .float-value {
+    font-size: 1.25rem;
+  }
+  .accuracy-card {
+    top: 20px;
+    right: 10px;
+  }
+  .patient-card {
+    bottom: 20px;
+    left: 10px;
+  }
 }
 
 .float-icon-box {
@@ -358,10 +413,16 @@
 }
 
 .metrics-main-title {
-  font-size: 3rem;
+  font-size: 2.25rem;
   font-weight: 900;
   color: var(--text-main);
   letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .metrics-main-title {
+    font-size: 3rem;
+  }
 }
 
 .metrics-main-title span {

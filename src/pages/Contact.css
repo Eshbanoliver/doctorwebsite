@@ -69,12 +69,24 @@
 }
 
 .contact-hero-title {
-  font-size: 4.5rem;
+  font-size: 2.75rem;
   font-weight: 950;
   color: var(--text-main);
   line-height: 1.1;
   margin-bottom: 24px;
   letter-spacing: -0.03em;
+}
+
+@media (min-width: 768px) {
+  .contact-hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact-hero-title {
+    font-size: 4.5rem;
+  }
 }
 
 .contact-hero-desc {
@@ -325,10 +337,17 @@
 /* Form V2 */
 .form-glass-card {
   background: white;
-  padding: 64px;
-  border-radius: 48px;
+  padding: 40px 24px;
+  border-radius: 32px;
   box-shadow: 0 50px 100px -20px rgba(0,0,0,0.08);
   border: 1px solid rgba(0,0,0,0.02);
+}
+
+@media (min-width: 768px) {
+  .form-glass-card {
+    padding: 64px;
+    border-radius: 48px;
+  }
 }
 
 .form-v2-header { margin-bottom: 48px; }
@@ -359,7 +378,7 @@
 }
 
 .btn-v2-submit {
-  padding: 24px;
+  padding: 20px;
   background: var(--primary);
   color: white;
   border: none;
@@ -373,6 +392,12 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2);
+}
+
+@media (min-width: 768px) {
+  .btn-v2-submit {
+    padding: 24px;
+  }
 }
 
 .btn-v2-submit:hover {
