@@ -96,7 +96,7 @@ const DoctorPreview = () => {
             </div>
 
             <div className="doc-cta-group">
-              <Link to="/contact" className="doc-btn-primary">
+              <Link to="/doctor-profile" className="doc-btn-primary">
                 <span>View Full Profile</span>
                 <div className="btn-icon-circle">
                   <ArrowRight size={18} />
