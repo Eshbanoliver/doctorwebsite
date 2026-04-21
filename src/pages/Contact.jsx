@@ -44,7 +44,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Address',
-      details: 'contact@doctor.com',
+      details: 'contact@msinfinix.com',
       theme: 'theme-rose'
     }
   ];
@@ -92,7 +92,7 @@ const Contact = () => {
                   </div>
                   <div className="pill-text-v2">
                     <small>Email Us</small>
-                    <span>contact@doctor.com</span>
+                    <span>contact@msinfinix.com</span>
                   </div>
                 </div>
               </div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Stethoscope } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,9 +31,9 @@ const Navbar = () => {
         <div className={`navbar-container glass-card ${scrolled ? 'compact' : ''}`}>
           <Link to="/" className="navbar-brand group">
             <div className="navbar-logo-box">
-              <Stethoscope size={28} />
+              <img src={logo} alt="MS Infinix Logo" className="navbar-logo-img" />
             </div>
-            <span className="navbar-brand-name gradient-text">Doctor</span>
+            <span className="navbar-brand-name gradient-text">MS Infinix</span>
           </Link>
 
           {/* Desktop Links */}

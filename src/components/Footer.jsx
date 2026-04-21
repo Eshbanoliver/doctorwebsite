@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Stethoscope, Globe, Share2, Mail, MapPin, Send } from 'lucide-react';
+import { Globe, Share2, Mail, MapPin } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,9 +20,9 @@ const Footer = () => {
           <div className="footer-brand-section">
             <Link to="/" className="footer-brand-logo">
               <div className="footer-icon-badge">
-                <Stethoscope size={24} />
+                <img src={logo} alt="MS Infinix Logo" className="footer-brand-logo-img" />
               </div>
-              <span className="footer-brand-name">Doctor</span>
+              <span className="footer-brand-name">MS Infinix</span>
             </Link>
             <p className="footer-brand-desc">
               Providing premium healthcare services with a focus on liquid glass aesthetics and modern medical care.
@@ -59,7 +60,7 @@ const Footer = () => {
               </div>
               <div className="footer-contact-item">
                 <Mail size={20} className="footer-contact-icon" />
-                <span>contact@doctor.com</span>
+                <span>contact@msinfinix.com</span>
               </div>
             </div>
           </div>

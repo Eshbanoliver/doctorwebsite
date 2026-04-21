@@ -42,7 +42,7 @@ const WhyChooseUs = () => {
             className="why-choose-content"
           >
             <SectionHeader 
-              subtitle="The Doctor Advantage"
+              subtitle="The MS Infinix Advantage"
               title="Why Choose Our Clinic For Your Care?"
             />
             <p className="why-choose-desc">

@@ -58,7 +58,7 @@ const CTASection = () => {
                    <Mail size={24} />
                  </div>
                  <div className="cta-footer-label">Email Us</div>
-                 <div className="cta-footer-value">info@doctor.com</div>
+                 <div className="cta-footer-value">info@msinfinix.com</div>
                </div>
                <div className="cta-footer-item">
                  <div className="cta-footer-icon-box">
