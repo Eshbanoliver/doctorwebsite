@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './FAQ.css';
 import SectionHeader from '../components/ui/SectionHeader';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,6 +8,7 @@ import { Plus, Minus, Search, MessageCircle } from 'lucide-react';
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
 
   const faqs = [
     {
@@ -184,11 +186,17 @@ const FAQ = () => {
                If you couldn't find the answer you were looking for, feel free to reach out to us directly.
              </p>
              <div className="cta-action-group">
-                <button className="btn-chat-action">
+                <button 
+                  className="btn-chat-action"
+                  onClick={() => window.open('https://wa.me/919999999999', '_blank')}
+                >
                    <MessageCircle size={24} />
                    <span>Chat with Us</span>
                 </button>
-                <button className="btn-call-action-glass">
+                <button 
+                  className="btn-call-action-glass"
+                  onClick={() => window.location.href = 'tel:+919999999999'}
+                >
                    Call Support
                 </button>
              </div>

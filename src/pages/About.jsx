@@ -77,7 +77,7 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="about-hero-sub"
               >
-                MS Infinex isn't just a clinic; it's a sanctuary where cutting-edge 
+                MS Infinix isn't just a clinic; it's a sanctuary where cutting-edge 
                 medical engineering meets deep-rooted compassion. We are redefining 
                 the standard of patient care through innovation.
               </motion.p>
@@ -205,7 +205,7 @@ const About = () => {
               </div>
 
               <p className="story-para">
-                Founded with a singular vision, MS Infinex bridges the gap between 
+                Founded with a singular vision, MS Infinix bridges the gap between 
                 advanced medical science and personalized care. We believe every patient 
                 deserves a healthcare journey that is seamless, transparent, and dignified.
               </p>

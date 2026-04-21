@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Services.css';
 import SectionHeader from '../components/ui/SectionHeader';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -18,6 +19,7 @@ import CTASection from '../components/home/CTASection';
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(null);
+  const navigate = useNavigate();
 
   // Mouse parallax effect for hero visual
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -225,7 +227,10 @@ const Services = () => {
                           </div>
                        ))}
                     </div>
-                    <button className="btn-white-action">
+                    <button 
+                      className="btn-white-action"
+                      onClick={() => navigate('/contact')}
+                    >
                        Get Specialist Appointment
                     </button>
                  </div>
@@ -279,13 +284,19 @@ const Services = () => {
               </div>
 
               <div className="modal-actions-box">
-                 <button className="btn-call-to-action">
-                    <PhoneCall size={20} />
-                    <span>Call to Inquire</span>
-                 </button>
-                 <button className="btn-book-outline">
-                    Book This Service
-                 </button>
+                  <button 
+                    className="btn-call-to-action"
+                    onClick={() => window.location.href = 'tel:+919999999999'}
+                  >
+                     <PhoneCall size={20} />
+                     <span>Call to Inquire</span>
+                  </button>
+                  <button 
+                    className="btn-book-outline"
+                    onClick={() => navigate('/contact')}
+                  >
+                     Book This Service
+                  </button>
               </div>
             </motion.div>
           </div>
