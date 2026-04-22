@@ -260,6 +260,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="pillar-card pillar-card-glass"
+              style={{ '--pillar-accent': '#f59e0b' }}
             >
               <div className="pillar-icon"><Clock size={32} /></div>
               <h3>24/7 Availability</h3>
@@ -273,6 +274,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               className="pillar-card pillar-card-glass"
+              style={{ '--pillar-accent': '#6366f1' }}
             >
               <div className="pillar-icon"><BookOpen size={32} /></div>
               <h3>Academic Excellence</h3>

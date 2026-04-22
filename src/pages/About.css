@@ -607,13 +607,14 @@
 .pillar-icon {
   width: 64px;
   height: 64px;
-  background: rgba(14, 165, 233, 0.1);
-  color: var(--primary);
+  background: color-mix(in srgb, var(--pillar-accent, var(--primary)), transparent 92%);
+  color: var(--pillar-accent, var(--primary));
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
+  transition: all 0.3s ease;
 }
 
 .pillar-card.highlight .pillar-icon {
@@ -648,24 +649,24 @@
 
 /* Glass Variant for non-highlighted cards */
 .pillar-card-glass {
-  background: rgba(255, 255, 255, 0.7) !important;
+  background: color-mix(in srgb, var(--pillar-accent, var(--primary)), white 96%) !important;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid color-mix(in srgb, var(--pillar-accent, var(--primary)), transparent 85%) !important;
   box-shadow: 0 20px 40px rgba(0,0,0,0.03);
 }
 
 .pillar-card-glass:hover {
   background: #ffffff !important;
-  border-color: var(--primary) !important;
-  box-shadow: 0 40px 80px rgba(14, 165, 233, 0.1) !important;
+  border-color: var(--pillar-accent, var(--primary)) !important;
+  box-shadow: 0 40px 80px color-mix(in srgb, var(--pillar-accent, var(--primary)), transparent 90%) !important;
 }
 
 .pillar-bg-icon-decomposed {
   position: absolute;
   bottom: -30px;
   right: -30px;
-  color: var(--primary);
+  color: var(--pillar-accent, var(--primary));
   opacity: 0.05;
   transform: rotate(20deg);
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -677,6 +678,12 @@
   transform: scale(1.2) rotate(0deg);
   bottom: -10px;
   right: -10px;
+}
+
+.pillar-card-glass:hover .pillar-icon {
+  background: var(--pillar-accent, var(--primary));
+  color: white;
+  transform: rotate(10deg);
 }
 
 /* Timeline V3 */
