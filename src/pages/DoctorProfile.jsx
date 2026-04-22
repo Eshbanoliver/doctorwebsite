@@ -10,6 +10,8 @@ import {
 import doctorImg from '../assets/doctor-profile.png';
 import './DoctorProfile.css';
 
+import CTASection from '../components/home/CTASection';
+
 const DoctorProfile = () => {
   const navigate = useNavigate();
   const qualifications = [
@@ -191,6 +193,7 @@ const DoctorProfile = () => {
 
         </div>
       </div>
+      <CTASection />
     </div>
   );
 };
