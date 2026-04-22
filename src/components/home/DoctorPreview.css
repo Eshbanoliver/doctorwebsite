@@ -1,6 +1,6 @@
 /* Enhanced Doctor Preview Section Styling */
 .doctor-preview-section {
-  padding: 100px 0;
+  padding: 100px 0 140px; /* Added more bottom padding */
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -319,9 +319,9 @@
 
 .doc-experience-badge {
   position: absolute;
-  bottom: -40px;
+  bottom: -10px;
   right: -20px;
-  z-index: 30;
+  z-index: 100;
 }
 
 .badge-inner {
@@ -330,7 +330,7 @@
   border-radius: 30px;
   color: white;
   text-align: center;
-  box-shadow: 0 30px 60px rgba(14, 165, 233, 0.4);
+  box-shadow: 0 40px 80px rgba(14, 165, 233, 0.5), 0 0 20px rgba(14, 165, 233, 0.2);
 }
 
 .badge-val {
