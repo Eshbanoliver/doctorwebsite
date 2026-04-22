@@ -4,7 +4,7 @@ import {
   Award, BookOpen, GraduationCap, 
   Stethoscope, HeartPulse, ShieldCheck,
   Calendar, Mail, Phone, MapPin, 
-  Linkedin, Twitter, Facebook, Star
+  Globe, Share2, Star
 } from 'lucide-react';
 import './DoctorProfile.css';
 
@@ -79,9 +79,9 @@ const DoctorProfile = () => {
               </div>
 
               <div className="profile-socials">
-                <a href="#" className="social-pill"><Linkedin size={20} /></a>
-                <a href="#" className="social-pill"><Twitter size={20} /></a>
-                <a href="#" className="social-pill"><Facebook size={20} /></a>
+                <a href="#" className="social-pill" title="LinkedIn"><Globe size={20} /></a>
+                <a href="#" className="social-pill" title="Twitter"><Share2 size={20} /></a>
+                <a href="#" className="social-pill" title="Facebook"><Globe size={20} /></a>
               </div>
 
               <button className="btn-profile-cta" onClick={() => window.location.href = '/contact'}>
