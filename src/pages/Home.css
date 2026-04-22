@@ -2035,13 +2035,19 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--accent-color), transparent 90%);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bento-feature-card:hover {
   background: white;
-  border-color: var(--primary);
-  box-shadow: 0 30px 60px -15px rgba(14, 165, 233, 0.1);
+  border-color: var(--accent-color);
+  box-shadow: 
+    0 30px 60px -15px color-mix(in srgb, var(--accent-color), transparent 80%),
+    inset 0 0 20px color-mix(in srgb, var(--accent-color), transparent 95%);
+  transform: translateY(-10px);
 }
 
 .bento-icon-wrapper {

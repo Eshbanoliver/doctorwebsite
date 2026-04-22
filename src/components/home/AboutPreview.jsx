@@ -103,6 +103,7 @@ const AboutPreview = () => {
                     transition={{ delay: idx * 0.1 }}
                     whileHover={{ translateY: -10 }}
                     className="bento-feature-card glass-card-v2"
+                    style={{ '--accent-color': item.color }}
                   >
                     <div className="bento-icon-wrapper" style={{ '--accent-color': item.color }}>
                       <item.icon size={22} color={item.color} />
