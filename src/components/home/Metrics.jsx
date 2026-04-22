@@ -170,28 +170,30 @@ const Metrics = () => {
           ))}
         </div>
 
-        {/* Bottom Trust Row */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="metrics-trust-row"
-        >
-          <div className="trust-item">
-            <ShieldCheck size={18} />
-            <span>ISO Certified Facility</span>
-          </div>
-          <div className="trust-divider"></div>
-          <div className="trust-item">
-            <Stethoscope size={18} />
-            <span>Advanced Diagnostics</span>
-          </div>
-          <div className="trust-divider"></div>
-          <div className="trust-item">
-            <Zap size={18} />
-            <span>24/7 Digital Support</span>
-          </div>
-        </motion.div>
+        {/* Bottom Trust Badges - Creative Redesign */}
+        <div className="metrics-trust-row-v2">
+          {[
+            { icon: ShieldCheck, text: 'ISO Certified Facility', color: '#10b981' },
+            { icon: Stethoscope, text: 'Advanced Diagnostics', color: '#0ea5e9' },
+            { icon: Zap, text: '24/7 Digital Support', color: '#f59e0b' }
+          ].map((item, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 + idx * 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="trust-badge-v2"
+            >
+              <div className="badge-glow-v2" style={{ background: item.color }}></div>
+              <div className="badge-content-v2">
+                <item.icon size={20} style={{ color: item.color }} />
+                <span>{item.text}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
