@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, Star, Award, BookOpen, 
   CheckCircle2, Sparkles, GraduationCap, 
@@ -10,6 +10,7 @@ import './DoctorPreview.css';
 import doctorImg from '../../assets/doctor-profile.png';
 
 const DoctorPreview = () => {
+  const navigate = useNavigate();
   const containerRef = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -97,12 +98,16 @@ const DoctorPreview = () => {
             </div>
 
             <div className="doc-cta-group">
-              <Link to="/doctor" className="doc-btn-primary">
+              <button 
+                onClick={() => navigate('/doctor')} 
+                className="doc-btn-primary"
+                style={{ border: 'none', cursor: 'pointer' }}
+              >
                 <span>View Full Profile</span>
                 <div className="btn-icon-circle">
                   <ArrowRight size={18} />
                 </div>
-              </Link>
+              </button>
               <div className="doc-trust-badge">
                 <Sparkles size={16} className="text-amber-500" />
                 <span>Top Rated Expert 2024</span>
@@ -118,32 +123,38 @@ const DoctorPreview = () => {
               <div className="doc-frame-accent"></div>
               <div className="doc-glass-card-back"></div>
               
-              <div className="doc-portrait-container">
-                <img 
-                  src={doctorImg} 
-                  alt="Dr. Oliver Eshban" 
-                  className="doc-portrait-img"
-                />
-                
-                {/* Floating Tags */}
-                <motion.div 
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="floating-doc-tag tag-top"
-                >
-                  <div className="tag-icon"><CheckCircle2 size={14} /></div>
-                  Board Certified
-                </motion.div>
-
-                <motion.div 
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="floating-doc-tag tag-bottom"
-                >
-                  <div className="tag-icon"><BookOpen size={14} /></div>
-                  Published Author
-                </motion.div>
-              </div>
+              <button 
+                onClick={() => navigate('/doctor')} 
+                className="doc-portrait-link"
+                style={{ background: 'none', border: 'none', padding: 0, width: '100%', textAlign: 'left' }}
+              >
+                <div className="doc-portrait-container">
+                  <img 
+                    src={doctorImg} 
+                    alt="Dr. Oliver Eshban" 
+                    className="doc-portrait-img"
+                  />
+                  
+                  {/* Floating Tags */}
+                  <motion.div 
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="floating-doc-tag tag-top"
+                  >
+                    <div className="tag-icon"><CheckCircle2 size={14} /></div>
+                    Board Certified
+                  </motion.div>
+  
+                  <motion.div 
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="floating-doc-tag tag-bottom"
+                  >
+                    <div className="tag-icon"><BookOpen size={14} /></div>
+                    Published Author
+                  </motion.div>
+                </div>
+              </button>
 
               {/* Experience Badge */}
               <motion.div 

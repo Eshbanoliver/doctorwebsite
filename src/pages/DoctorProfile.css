@@ -56,7 +56,8 @@
 .profile-breadcrumb {
   grid-column: 1 / -1;
   margin-bottom: -40px;
-  z-index: 20;
+  z-index: 100;
+  position: relative;
 }
 
 .breadcrumb-link {

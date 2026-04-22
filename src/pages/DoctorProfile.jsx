@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   Award, BookOpen, GraduationCap, 
   Stethoscope, HeartPulse, ShieldCheck,
@@ -11,6 +11,7 @@ import doctorImg from '../assets/doctor-profile.png';
 import './DoctorProfile.css';
 
 const DoctorProfile = () => {
+  const navigate = useNavigate();
   const qualifications = [
     { degree: 'Doctor of Medicine (MD)', university: 'Harvard Medical School', year: '2005' },
     { degree: 'Master of Surgery (MS)', university: 'Johns Hopkins University', year: '2008' },
@@ -42,10 +43,14 @@ const DoctorProfile = () => {
             animate={{ opacity: 1, x: 0 }}
             className="profile-breadcrumb"
           >
-            <Link to="/" className="breadcrumb-link">
+            <button 
+              onClick={() => navigate('/')} 
+              className="breadcrumb-link"
+              style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+            >
               <ArrowRight size={16} style={{ transform: 'rotate(180deg)' }} />
               <span>Back to Home</span>
-            </Link>
+            </button>
           </motion.div>
           
           {/* Left Column: Fixed Bio & Socials */}
