@@ -7,6 +7,7 @@ import {
   Stethoscope, HeartPulse, ShieldCheck 
 } from 'lucide-react';
 import './DoctorPreview.css';
+import doctorImg from '../../assets/doctor-profile.png';
 
 const DoctorPreview = () => {
   const containerRef = React.useRef(null);
@@ -96,7 +97,7 @@ const DoctorPreview = () => {
             </div>
 
             <div className="doc-cta-group">
-              <Link to="/doctor-profile" className="doc-btn-primary">
+              <Link to="/doctor" className="doc-btn-primary">
                 <span>View Full Profile</span>
                 <div className="btn-icon-circle">
                   <ArrowRight size={18} />
@@ -119,8 +120,8 @@ const DoctorPreview = () => {
               
               <div className="doc-portrait-container">
                 <img 
-                  src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Expert Lead Doctor" 
+                  src={doctorImg} 
+                  alt="Dr. Oliver Eshban" 
                   className="doc-portrait-img"
                 />
                 

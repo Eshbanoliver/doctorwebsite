@@ -1,11 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   Award, BookOpen, GraduationCap, 
   Stethoscope, HeartPulse, ShieldCheck,
   Calendar, Mail, Phone, MapPin, 
-  Globe, Share2, Star
+  Globe, Share2, Star, ArrowRight
 } from 'lucide-react';
+import doctorImg from '../assets/doctor-profile.png';
 import './DoctorProfile.css';
 
 const DoctorProfile = () => {
@@ -31,9 +33,20 @@ const DoctorProfile = () => {
     <div className="doctor-profile-container">
       {/* Background Accents */}
       <div className="profile-bg-glow"></div>
+      <div className="profile-bg-blob"></div>
       
       <div className="container">
         <div className="profile-grid">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="profile-breadcrumb"
+          >
+            <Link to="/" className="breadcrumb-link">
+              <ArrowRight size={16} style={{ transform: 'rotate(180deg)' }} />
+              <span>Back to Home</span>
+            </Link>
+          </motion.div>
           
           {/* Left Column: Fixed Bio & Socials */}
           <div className="profile-sidebar">
@@ -45,14 +58,14 @@ const DoctorProfile = () => {
             >
               <div className="profile-image-container">
                 <img 
-                  src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Doctor Portrait" 
+                  src={doctorImg} 
+                  alt="Dr. Oliver Eshban" 
                 />
                 <div className="online-indicator"></div>
               </div>
               
               <div className="profile-name-box">
-                <h1 className="profile-name">Dr. MS Infinix</h1>
+                <h1 className="profile-name">Dr. Oliver Eshban</h1>
                 <span className="profile-title">Lead Medical Specialist & Founder</span>
               </div>
 
@@ -101,11 +114,11 @@ const DoctorProfile = () => {
             >
               <h2 className="section-title-v2">Professional Summary</h2>
               <p className="profile-about-text">
-                As the visionary lead at MS Infinix, I bring over 20 years of clinical mastery and humanitarian 
-                dedication to the field of modern healthcare. My philosophy centers around precision medicine—where 
+                As the visionary lead at MS Infinix, Dr. Oliver Eshban brings over 20 years of clinical mastery and humanitarian 
+                dedication to the field of modern healthcare. His philosophy centers around precision medicine—where 
                 state-of-the-art diagnostic technology meets a deeply personal, empathetic approach to patient care. 
-                I specialize in interventional cardiology and the implementation of digital healthcare systems that 
-                make quality medicine accessible and efficient for everyone.
+                Specializing in interventional cardiology and the implementation of digital healthcare systems, 
+                Dr. Eshban is committed to making quality medicine accessible and efficient for everyone.
               </p>
             </motion.section>
 

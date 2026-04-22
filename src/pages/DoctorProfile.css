@@ -11,11 +11,33 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 500px;
-  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+  height: 800px;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
 }
+
+.profile-bg-blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(16, 185, 129, 0.03) 100%);
+  filter: blur(80px);
+  border-radius: 50%;
+  z-index: 0;
+  top: 10%;
+  right: -10%;
+  animation: float 20s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-50px, 100px) rotate(15deg); }
+}
+
 
 .profile-grid {
   display: grid;
@@ -29,6 +51,34 @@
   .profile-grid {
     grid-template-columns: 350px 1fr;
   }
+}
+
+.profile-breadcrumb {
+  grid-column: 1 / -1;
+  margin-bottom: -40px;
+  z-index: 20;
+}
+
+.breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 99px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.breadcrumb-link:hover {
+  color: var(--primary);
+  background: white;
+  transform: translateX(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 /* Sidebar Styles */
