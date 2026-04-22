@@ -109,6 +109,28 @@ const DoctorProfile = () => {
                 <span>Book a Consultation</span>
               </button>
             </motion.div>
+
+            {/* Sidebar FAQ Section */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="sidebar-faq-box glass-card"
+            >
+              <h3 className="sidebar-faq-title">Quick FAQ</h3>
+              <div className="sidebar-faq-list">
+                {[
+                  { q: 'Consultation Fee?', a: '₹800 (In-clinic), ₹600 (Tele-health)' },
+                  { q: 'Insurance accepted?', a: 'Yes, all major TPA insurance' },
+                  { q: 'Emergency availability?', a: 'Yes, 24/7 on-call for critical cases' }
+                ].map((item, i) => (
+                  <div key={i} className="sidebar-faq-item">
+                    <span className="faq-q">{item.q}</span>
+                    <p className="faq-a">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
 
           {/* Right Column: Detailed Info Scrollable */}

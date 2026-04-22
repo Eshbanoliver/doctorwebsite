@@ -386,3 +386,43 @@
 .exp-clinic {
   color: var(--text-muted);
 }
+
+/* Sidebar FAQ */
+.sidebar-faq-box {
+  margin-top: 32px;
+  padding: 24px;
+  text-align: left;
+}
+
+.sidebar-faq-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--text-main);
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+  padding-bottom: 12px;
+}
+
+.sidebar-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-faq-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.faq-a {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
