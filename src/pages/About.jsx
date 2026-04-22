@@ -212,15 +212,16 @@ const About = () => {
               
               <div className="story-pill-grid">
                 {[
-                  { icon: Target, text: 'Precision Diagnostics', sub: 'Evidence-based results' },
-                  { icon: Shield, text: 'Absolute Safety', sub: 'Uncompromising protocols' },
-                  { icon: Sparkles, text: 'Modern Tech', sub: 'Pioneering innovation' },
-                  { icon: Heart, text: 'Patient First', sub: 'Compassionate approach' }
+                  { icon: Target, text: 'Precision Diagnostics', sub: 'Evidence-based results', color: '#0ea5e9' },
+                  { icon: Shield, text: 'Absolute Safety', sub: 'Uncompromising protocols', color: '#10b981' },
+                  { icon: Sparkles, text: 'Modern Tech', sub: 'Pioneering innovation', color: '#8b5cf6' },
+                  { icon: Heart, text: 'Patient First', sub: 'Compassionate approach', color: '#f43f5e' }
                 ].map((pill, i) => (
                   <motion.div 
                     key={i} 
                     whileHover={{ y: -5 }}
                     className="story-pill-card"
+                    style={{ '--pill-accent': pill.color }}
                   >
                     <div className="pill-icon-box">
                       <pill.icon size={22} />
