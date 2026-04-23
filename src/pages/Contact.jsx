@@ -146,6 +146,11 @@ const Contact = () => {
 
       {/* Info & Form Section */}
       <section className="contact-main-section-v2">
+        <div className="contact-main-bg-mesh">
+          <div className="bg-blob blob-1"></div>
+          <div className="bg-blob blob-2"></div>
+          <div className="bg-blob blob-3"></div>
+        </div>
         <div className="container">
           <div className="contact-info-grid-v2">
             {contactInfos.map((info, idx) => (
