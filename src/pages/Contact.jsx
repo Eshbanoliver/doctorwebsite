@@ -169,6 +169,9 @@ const Contact = () => {
                   <h4>{info.title}</h4>
                   <p>{info.details}</p>
                 </div>
+                <div className="card-v2-bg-design">
+                  <div className="v2-shape"></div>
+                </div>
               </motion.div>
             ))}
           </div>
