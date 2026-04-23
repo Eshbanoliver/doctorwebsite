@@ -207,8 +207,11 @@ const Services = () => {
                 <p className="service-explore-desc">
                   {service.desc}
                 </p>
-                <div className="service-explore-link">
-                   <span>Learn More</span>
+                <div className="service-explore-link" onClick={(e) => {
+                  e.stopPropagation();
+                  navigate('/contact');
+                }}>
+                   <span>Contact Us</span>
                    <div className="link-icon-wrapper">
                      <PlusCircle size={20} className="link-icon" />
                    </div>
