@@ -190,8 +190,16 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 onClick={() => setSelectedService(service)}
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = ((e.clientX - rect.left) / rect.width) * 100;
+                  const y = ((e.clientY - rect.top) / rect.height) * 100;
+                  e.currentTarget.style.setProperty('--mouse-x', `${x}%`);
+                  e.currentTarget.style.setProperty('--mouse-y', `${y}%`);
+                }}
                 className={`service-explore-card ${service.bg} group`}
               >
+                <div className="card-bg-number">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</div>
                 <div className="service-icon-box">
                   <service.icon size={40} />
                 </div>
@@ -201,8 +209,16 @@ const Services = () => {
                 </p>
                 <div className="service-explore-link">
                    <span>Learn More</span>
-                   <PlusCircle size={20} className="link-icon" />
+                   <div className="link-icon-wrapper">
+                     <PlusCircle size={20} className="link-icon" />
+                   </div>
                 </div>
+                <div className="card-hover-glow"></div>
+                <div className="card-decorative-shapes">
+                  <div className="shape shape-1"></div>
+                  <div className="shape shape-2"></div>
+                </div>
+                <div className="card-grid-pattern"></div>
               </motion.div>
             ))}
           </div>
