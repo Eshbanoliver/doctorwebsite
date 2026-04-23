@@ -159,14 +159,14 @@
 
 .contact-glass-visual {
   position: relative;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(14, 165, 233, 0.2);
   border-radius: 48px;
   padding: 80px 48px;
   text-align: center;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.05);
+  box-shadow: 0 40px 100px rgba(14, 165, 233, 0.1);
 }
 
 .visual-map-overlay {
@@ -200,8 +200,8 @@
   align-items: center;
   justify-content: center;
   color: var(--primary);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.2);
   z-index: 20;
 }
 
