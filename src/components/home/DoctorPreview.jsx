@@ -7,7 +7,7 @@ import {
   Stethoscope, HeartPulse, ShieldCheck 
 } from 'lucide-react';
 import './DoctorPreview.css';
-import doctorImg from '../../assets/doctor-profile.png';
+import doctorImg from '../../assets/dr_quresh_enhanced.png';
 
 const DoctorPreview = () => {
   const navigate = useNavigate();

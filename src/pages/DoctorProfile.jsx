@@ -7,7 +7,7 @@ import {
   Calendar, Mail, Phone, MapPin, 
   Globe, Share2, Star, ArrowRight
 } from 'lucide-react';
-import doctorImg from '../assets/doctor-profile.png';
+import doctorImg from '../assets/dr_quresh_enhanced.png';
 import './DoctorProfile.css';
 
 import CTASection from '../components/home/CTASection';

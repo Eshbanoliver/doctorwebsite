@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Activity, Shield, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import doctorHeroImg from '../../assets/dr_quresh_enhanced.png';
 
 const Hero = () => {
   return (
@@ -74,8 +75,8 @@ const Hero = () => {
             <div className="hero-main-image-container">
                <div className="hero-image-blur-bg"></div>
                <img 
-                src="https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80&w=800"
-                alt="Doctor" 
+                src={doctorHeroImg}
+                alt="Dr. Quresh Bambora" 
                 className="hero-main-img"
                />
             </div>
