@@ -1,8 +1,8 @@
-# MS Infinix — The Future of Human-Centric Healthcare
+# PIMS City Hospital — Dr. Quresh Bambora
 
-![MS Infinix Banner](https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80&w=1200)
+![PIMS City Hospital Banner](https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80&w=1200)
 
-**MS Infinix** is a premium medical web application built for modern healthcare providers. Designed with a strict focus on "Liquid Glass" aesthetics, the platform delivers a state-of-the-art digital experience that combines advanced medical engineering with deep-rooted compassion.
+**PIMS City Hospital / Dr. Quresh Bambora** is a premium medical web application built for modern oncology providers. Designed with a strict focus on "Liquid Glass" aesthetics, the platform delivers a state-of-the-art digital experience that combines advanced surgical oncology with deep-rooted compassion.
 
 ---
 

@@ -17,18 +17,18 @@ const DoctorProfile = () => {
   const qualifications = [
     { degree: 'Doctor of Medicine (MD)', university: 'Harvard Medical School', year: '2005' },
     { degree: 'Master of Surgery (MS)', university: 'Johns Hopkins University', year: '2008' },
-    { degree: 'Fellowship in Advanced Cardiology', university: 'Cleveland Clinic', year: '2012' }
+    { degree: 'Fellowship in Surgical Oncology', university: 'Tata Memorial Hospital', year: '2012' }
   ];
 
   const expertises = [
-    { title: 'Interventional Cardiology', icon: HeartPulse },
+    { title: 'Surgical Oncology', icon: HeartPulse },
     { title: 'Preventive Medicine', icon: ShieldCheck },
     { title: 'Diagnostic Imaging', icon: Stethoscope }
   ];
 
   const experience = [
-    { period: '2018 - Present', role: 'Head Specialist', clinic: 'MS Infinix' },
-    { period: '2012 - 2018', role: 'Senior Cardiologist', clinic: 'Fortis Health Global' },
+    { period: '2018 - Present', role: 'Head Specialist', clinic: 'PIMS City Hospital' },
+    { period: '2012 - 2018', role: 'Senior Oncologist', clinic: 'Fortis Hospital' },
     { period: '2008 - 2012', role: 'Medical Specialist', clinic: 'Udaipur Medical Institute' }
   ];
 
@@ -90,7 +90,7 @@ const DoctorProfile = () => {
               <div className="profile-contact-info">
                 <div className="contact-item">
                   <Mail size={18} />
-                  <span>dr.infinix@msinfinix.com</span>
+                  <span>contact@drquresh.com</span>
                 </div>
                 <div className="contact-item">
                   <Phone size={18} />

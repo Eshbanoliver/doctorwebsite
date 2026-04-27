@@ -22,11 +22,11 @@ const Hero = () => {
             </div>
             
             <h1 className="hero-title">
-              Modern <span className="gradient-text">Healthcare</span> for Your Family
+              Advanced <span className="gradient-text">Cancer Care</span> & Recovery
             </h1>
             
             <p className="hero-description">
-              Experience premium medical care with our liquid glass approach. We combine advanced technology with compassionate service for a healthier future.
+              Experience exceptional surgical oncology and personalized cancer care at PIMS City Hospital. We combine advanced technology with compassionate service for a healthier future.
             </p>
             
             <div className="hero-button-group">

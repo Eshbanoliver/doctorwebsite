@@ -53,9 +53,7 @@ const DoctorPreview = () => {
             </h2>
 
             <p className="doctor-bio-short">
-              With over two decades of clinical mastery, our lead specialist combines 
-              precision methodology with human-centric care. Specializing in advanced 
-              diagnostics and minimally invasive procedures.
+              With extensive expertise in surgical oncology, our lead specialist provides exceptional, personalized cancer care. Specializing in advanced treatments and surgical management of head and neck cancers.
             </p>
 
             <div className="doc-focus-areas">
@@ -63,19 +61,19 @@ const DoctorPreview = () => {
                 <div className="focus-icon-box blue">
                   <Stethoscope size={20} />
                 </div>
-                <span>General Medicine</span>
+                <span>Surgical Oncology</span>
               </div>
               <div className="focus-item">
                 <div className="focus-icon-box teal">
                   <HeartPulse size={20} />
                 </div>
-                <span>Cardiac Care</span>
+                <span>Head & Neck Cancers</span>
               </div>
               <div className="focus-item">
                 <div className="focus-icon-box rose">
                   <ShieldCheck size={20} />
                 </div>
-                <span>Critical Care</span>
+                <span>Minimally Invasive</span>
               </div>
             </div>
             
@@ -131,7 +129,7 @@ const DoctorPreview = () => {
                 <div className="doc-portrait-container">
                   <img 
                     src={doctorImg} 
-                    alt="Dr. Oliver Eshban" 
+                    alt="Dr. Quresh Bambora" 
                     className="doc-portrait-img"
                   />
                   

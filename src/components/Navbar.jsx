@@ -31,9 +31,9 @@ const Navbar = () => {
         <div className={`navbar-container glass-card ${scrolled ? 'compact' : ''}`}>
           <Link to="/" className="navbar-brand group">
             <div className="navbar-logo-box">
-              <img src={logo} alt="MS Infinix Logo" className="navbar-logo-img" />
+              <img src={logo} alt="Dr. Quresh Logo" className="navbar-logo-img" />
             </div>
-            <span className="navbar-brand-name gradient-text">MS Infinix</span>
+            <span className="navbar-brand-name gradient-text">Dr. Quresh</span>
           </Link>
 
           {/* Desktop Links */}

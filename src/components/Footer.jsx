@@ -20,9 +20,9 @@ const Footer = () => {
           <div className="footer-brand-section">
             <Link to="/" className="footer-brand-logo">
               <div className="footer-icon-badge">
-                <img src={logo} alt="MS Infinix Logo" className="footer-brand-logo-img" />
+                <img src={logo} alt="Dr. Quresh Logo" className="footer-brand-logo-img" />
               </div>
-              <span className="footer-brand-name">MS Infinix</span>
+              <span className="footer-brand-name">Dr. Quresh</span>
             </Link>
             <p className="footer-brand-desc">
               Providing premium healthcare services with a focus on liquid glass aesthetics and modern medical care.
@@ -69,7 +69,7 @@ const Footer = () => {
               </div>
               <div className="footer-contact-item">
                 <Mail size={20} className="footer-contact-icon" />
-                <span>contact@msinfinix.com</span>
+                <span>contact@drquresh.com</span>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="footer-bottom-bar">
-          <p>© Copyright 2026 | MS Infinix | All Rights Reserved</p>
+          <p>© Copyright 2026 | Dr. Quresh Bambora | All Rights Reserved</p>
         </div>
       </div>
     </footer>
