@@ -13,6 +13,13 @@ import CTASection from '../components/home/CTASection';
 import './About.css';
 
 const About = () => {
+  const highlights = [
+    { title: 'Surgical Oncology', desc: 'Advanced cancer surgery', icon: Award, color: '#0ea5e9' },
+    { title: 'Personalized Care', desc: 'Tailored oncology plans', icon: Heart, color: '#f43f5e' },
+    { title: 'Modern Diagnostics', desc: 'Precision cancer screening', icon: Shield, color: '#10b981' },
+    { title: 'Online Support', desc: 'Virtual oncology consults', icon: Activity, color: '#8b5cf6' }
+  ];
+
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -234,6 +241,39 @@ const About = () => {
                 ))}
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Highlights Bento Section */}
+      <section className="about-highlights-section">
+        <div className="container">
+          <SectionHeader 
+            subtitle="Our Strengths"
+            title="Why Patients Trust Our Oncology Care"
+            centered
+          />
+          
+          <div className="about-feature-bento">
+            {highlights.map((item, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: idx * 0.1 }}
+                whileHover={{ translateY: -10 }}
+                className="bento-feature-card"
+                style={{ '--accent-color': item.color }}
+              >
+                <div className="bento-icon-wrapper" style={{ '--accent-color': item.color }}>
+                  <item.icon size={22} color={item.color} />
+                </div>
+                <div className="bento-card-info">
+                  <h4 className="bento-title">{item.title}</h4>
+                  <p className="bento-desc">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

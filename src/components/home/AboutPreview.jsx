@@ -5,12 +5,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle2, Award, Heart, Shield, Activity } from 'lucide-react';
 
 const AboutPreview = () => {
-  const highlights = [
-    { title: 'Expert Physicians', desc: 'Board-certified specialists', icon: Award, color: '#0ea5e9' },
-    { title: 'Empathetic care', desc: 'Patient-first philosophy', icon: Heart, color: '#f43f5e' },
-    { title: 'Modern Safety', desc: 'Secure & safe environment', icon: Shield, color: '#10b981' },
-    { title: 'Pulse monitor', desc: 'Real-time health tracking', icon: Activity, color: '#8b5cf6' }
-  ];
+
 
   return (
     <section className="about-section highlight-v3">
@@ -85,36 +80,14 @@ const AboutPreview = () => {
             >
               <SectionHeader 
                 subtitle="Who We Are"
-                title="Redefining Healthcare Excellence in Udaipur"
+                title="Leading Surgical Oncology Care at PIMS City Hospital"
               />
               
               <p className="about-text-lead">
-                Udaipur Health Clinic isn't just a hospital; it's a sanctuary of wellness. We blend 
-                cutting-edge medical technology with deeply personal, compassionate care that treats the person, not just the ailment.
+                Led by Dr. Quresh Bambora, PIMS City Hospital is Udaipur's premier destination for advanced surgical oncology. We specialize in comprehensive cancer care, combining world-class surgical expertise with the compassionate, personalized treatment every patient deserves.
               </p>
 
-              {/* Bento Feature Grid */}
-              <div className="about-feature-bento">
-                {highlights.map((item, idx) => (
-                  <motion.div 
-                    key={idx}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: idx * 0.1 }}
-                    whileHover={{ translateY: -10 }}
-                    className="bento-feature-card glass-card-v2"
-                    style={{ '--accent-color': item.color }}
-                  >
-                    <div className="bento-icon-wrapper" style={{ '--accent-color': item.color }}>
-                      <item.icon size={22} color={item.color} />
-                    </div>
-                    <div className="bento-card-info">
-                      <h4 className="bento-title">{item.title}</h4>
-                      <p className="bento-desc">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+
 
               <div className="about-cta-stack">
                 <Link to="/about" className="btn-modern-primary">
