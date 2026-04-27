@@ -178,11 +178,17 @@ const Contact = () => {
 
           <div className="contact-layout-split-v2">
              <div className="contact-hours-column">
-                <div className="contact-map-mini">
-                   <div className="map-placeholder-mini">
-                      <MapPin size={40} className="mini-pin" />
-                      <span>Udaipur Centre</span>
-                   </div>
+                <div className="contact-map-mini" style={{ padding: 0, overflow: 'hidden' }}>
+                   <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.1753123126036!2d73.71926297536315!3d24.61764187808859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e749f44c5091%3A0xe623658ce6799970!2sPIMS%20City%20HOSPITAL%3A%20DR.QURESH%20BAMBORA!5e0!3m2!1sen!2sin!4v1777266526040!5m2!1sen!2sin" 
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0, minHeight: '250px', borderRadius: '16px' }} 
+                      allowFullScreen="" 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Clinic Location"
+                   ></iframe>
                 </div>
 
                 <div className="hours-card-v2">

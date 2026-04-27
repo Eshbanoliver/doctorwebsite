@@ -66,14 +66,14 @@ const DoctorProfile = () => {
               <div className="profile-image-container">
                 <img 
                   src={doctorImg} 
-                  alt="Dr. Oliver Eshban" 
+                  alt="Dr. Quresh Bambora" 
                 />
                 <div className="online-indicator"></div>
               </div>
               
               <div className="profile-name-box">
-                <h1 className="profile-name">Dr. Oliver Eshban</h1>
-                <span className="profile-title">Lead Medical Specialist & Founder</span>
+                <h1 className="profile-name">Dr. Quresh Bambora</h1>
+                <span className="profile-title">Surgical Oncologist</span>
               </div>
 
               <div className="profile-quick-stats">
@@ -99,9 +99,8 @@ const DoctorProfile = () => {
               </div>
 
               <div className="profile-socials">
-                <a href="#" className="social-pill" title="LinkedIn"><Globe size={20} /></a>
-                <a href="#" className="social-pill" title="Twitter"><Share2 size={20} /></a>
-                <a href="#" className="social-pill" title="Facebook"><Globe size={20} /></a>
+                <a href="https://in.linkedin.com/in/drquresh-bambora-8578a055" target="_blank" rel="noreferrer" className="social-pill" title="LinkedIn"><Globe size={20} /></a>
+                <a href="https://www.instagram.com/drquresh/" target="_blank" rel="noreferrer" className="social-pill" title="Instagram"><Share2 size={20} /></a>
               </div>
 
               <button className="btn-profile-cta" onClick={() => window.location.href = '/contact'}>
@@ -143,11 +142,7 @@ const DoctorProfile = () => {
             >
               <h2 className="section-title-v2">Professional Summary</h2>
               <p className="profile-about-text">
-                As the visionary lead at MS Infinix, Dr. Oliver Eshban brings over 20 years of clinical mastery and humanitarian 
-                dedication to the field of modern healthcare. His philosophy centers around precision medicine—where 
-                state-of-the-art diagnostic technology meets a deeply personal, empathetic approach to patient care. 
-                Specializing in interventional cardiology and the implementation of digital healthcare systems, 
-                Dr. Eshban is committed to making quality medicine accessible and efficient for everyone.
+                Introducing the renowned Dr. Quresh Bambora, a highly skilled and compassionate surgical oncologist who is committed to providing exceptional cancer care to his patients. As one of Udaipur's finest cancer specialists, Dr. Bambora excels in the treatment and surgical management of head and neck cancers. His unwavering dedication to his patients and his ability to use cutting-edge technology ensure the highest level of personalized care. Located at OPD 12 Consulting Room, PIMS City Hospital in Transport Nagar, Bedwas, Dr. Bambora is a steadfast advocate for his patients, offering hope and guidance throughout their journey towards recovery.
               </p>
             </motion.section>
 
@@ -197,18 +192,16 @@ const DoctorProfile = () => {
             >
               <h2 className="section-title-v2">Work Experience</h2>
               <div className="experience-list">
-                {experience.map((item, idx) => (
-                  <div key={idx} className="exp-card">
+                  <div className="exp-card">
                     <div className="exp-icon bg-soft-blue">
                       <MapPin size={24} className="text-primary" />
                     </div>
                     <div className="exp-details">
-                      <span className="exp-period">{item.period}</span>
-                      <h4 className="exp-role">{item.role}</h4>
-                      <p className="exp-clinic">{item.clinic}</p>
+                      <span className="exp-period">Present</span>
+                      <h4 className="exp-role">Surgical Oncologist</h4>
+                      <p className="exp-clinic">OPD 12 Consulting Room, PIMS City Hospital, Transport Nagar, Bedwas</p>
                     </div>
                   </div>
-                ))}
               </div>
             </motion.section>
           </div>

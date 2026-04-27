@@ -34,57 +34,57 @@ const Services = () => {
   const services = [
     {
       icon: Stethoscope,
-      title: 'General Consultation',
-      desc: 'Expert general checkups and health guidance for all age groups. Our primary care physicians are dedicated to your overall well-being.',
-      detailed_desc: 'Our general consultation service provides a comprehensive assessment of your health. From routine physicals to managing chronic conditions, we use a patient-centered approach to ensure you receive the best care. We focus on listening, diagnosing, and creating a personalized health plan for you.',
+      title: 'Surgical Oncology',
+      desc: 'Advanced minimally invasive and laparoscopic surgeries for various types of cancers.',
+      detailed_desc: 'Our surgical oncology services utilize cutting-edge techniques, including minimally invasive and laparoscopic surgeries. We specialize in colorectal, paediatric, pancreas, and other complex oncological surgeries.',
       color: 'theme-blue',
       bg: 'theme-blue',
-      benefits: ['Routine Physicals', 'Vaccinations', 'Chronic Disease Management', 'Health Screenings']
+      benefits: ['Minimally Invasive Surgery', 'Laparoscopic Oncology', 'Colorectal Surgery', 'Paediatric & Pancreas Cancers']
     },
     {
       icon: Activity,
-      title: 'Health Checkups',
-      desc: 'Comprehensive full-body health screenings and diagnostic tests tailored to your age and risk factors.',
-      detailed_desc: 'Prevention is better than cure. Our executive health checkups are designed to detect potential health issues before they become serious. We offer packages that include blood tests, imaging, and specialist consultations to give you a complete picture of your health.',
+      title: 'Medical Oncology & Therapy',
+      desc: 'Comprehensive cancer therapies including chemotherapy, hormone therapy, and targeted treatments.',
+      detailed_desc: 'We offer a full spectrum of medical oncology treatments. Our services include systemic cancer therapy, specialized hormone therapy for breast cancer, and treatments managed by expert medical and haemato oncologists.',
       color: 'theme-teal',
       bg: 'theme-teal',
-      benefits: ['Executive Health Pakages', 'Age-Specific Screenings', 'Nutritional Counseling', 'Lifestyle Assessment']
+      benefits: ['Cancer Therapy', 'Hormone Therapy', 'Haemato Oncology', 'Targeted Treatment']
     },
     {
       icon: Zap,
-      title: 'Emergency Care',
-      desc: 'Quick and efficient 24/7 medical response for critical situations. Our trauma team is always on standby.',
-      detailed_desc: 'In a medical emergency, every second counts. Our emergency department is equipped with advanced life-support systems and staffed by trauma specialists who can handle everything from cardiac arrests to severe accidents. We prioritize immediate triage and specialized care.',
+      title: 'Radiation Oncology',
+      desc: 'State-of-the-art radio therapy centers providing precise radiation treatments.',
+      detailed_desc: 'Our radiation oncology centers are equipped with advanced technology to deliver precise and effective radiation therapy. We focus on maximizing treatment efficacy while minimizing side effects.',
       color: 'theme-rose',
       bg: 'theme-rose',
-      benefits: ['24/7 Trauma Service', 'Ambulance Support', 'Critical Care Unit', 'Immediate Triage']
+      benefits: ['Radio Therapy Centres', 'Precise Radiation', 'Advanced Technology', 'Expert Radiation Oncologists']
     },
     {
       icon: Microscope,
-      title: 'Diagnostics',
-      desc: 'Advanced laboratory and imaging services for accurate results. Fast turnaround times for all tests.',
-      detailed_desc: 'Accurate diagnosis is the foundation of effective treatment. Our diagnostic center features state-of-the-art laboratory equipment and imaging technology (X-ray, Ultrasound, CT Scan). Our pathologists and radiologists work closely to provide rapid and precise results.',
+      title: 'Organ-Specific Cancer Care',
+      desc: 'Specialized care for head & neck, bladder, colon, kidney, neuro, ocular, skin, and more.',
+      detailed_desc: 'Our team includes specialists dedicated to specific organs. We provide expert care for head & neck, bladder, colon, kidney, laryngeal, neuro, ocular, orthopaedic, skin, thoracic, uterus, gynaecologic, and uro cancers.',
       color: 'theme-indigo',
       bg: 'theme-indigo',
-      benefits: ['Digital X-Ray/Ultrasound', 'Pathology Lab', 'ECG/TMT Testing', 'Biopsy Services']
+      benefits: ['Head & Neck Oncology', 'Gynaecologic Oncology', 'Neuro & Ocular Oncology', 'Thoracic & Uro Oncology']
     },
     {
       icon: ShieldCheck,
-      title: 'Preventive Healthcare',
-      desc: 'Proactive strategies and wellness programs to maintain long-term health and prevent diseases.',
-      detailed_desc: 'Our preventive healthcare programs focus on education and early intervention. We help you manage risks like stress, obesity, and inactivity through guided programs. Our goal is to empower you with the knowledge and tools to stay healthy.',
+      title: 'Psychiatric Oncology',
+      desc: 'Mental health and psychological support tailored for cancer patients.',
+      detailed_desc: 'We understand that a cancer diagnosis affects mental health. Our psychiatric oncology services offer emotional and psychological support to patients and their families throughout the treatment journey.',
       color: 'theme-emerald',
       bg: 'theme-emerald',
-      benefits: ['Wellness Coaching', 'Immunization Charts', 'Anti-Smoking Programs', 'Heart Health Focus']
+      benefits: ['Psychological Support', 'Emotional Care', 'Family Counseling', 'Stress Management']
     },
     {
       icon: Video,
       title: 'Online Consultation',
-      desc: 'Connect with experts from the comfort of your home via our secure video consultation platform.',
-      detailed_desc: 'Get expert medical advice without leaving your home. Our secure tele-health platform allows you to upload reports, chat with doctors, and receive digital prescriptions. Ideal for follow-ups, minor ailments, and mental health counseling.',
+      desc: 'Connect with expert online oncologists from the comfort of your home.',
+      detailed_desc: 'Access expert oncology advice virtually. Our online consultation platform allows you to securely discuss your diagnosis, treatment plans, and follow-ups with our specialists without needing to travel.',
       color: 'theme-amber',
       bg: 'theme-amber',
-      benefits: ['Secure Video Link', 'Digital Prescriptions', 'Record Management', 'Time-Saving']
+      benefits: ['Virtual Appointments', 'Second Opinions', 'Secure Video Link', 'Convenient Access']
     }
   ];
 
@@ -236,10 +236,10 @@ const Services = () => {
                  <div className="specialist-text-content">
                     <h2 className="specialist-main-title">Specialist Consultations</h2>
                     <p className="specialist-sub-desc">
-                      Our clinic hosts visiting specialists across Cardiology, Orthopedics, Pediatrics, and Gynacology. We ensure you get expert advice from the best in the field without traveling outside Udaipur.
+                      Our clinic hosts expert specialists across Surgical, Medical, and Radiation Oncology. We ensure you get comprehensive and advanced cancer care under one roof.
                     </p>
                     <div className="specialist-list">
-                       {['Cardiology', 'Orthopedics', 'Pediatrics', 'Obstetrics & Gynaecology'].map((spec, idx) => (
+                       {['Surgical Oncology', 'Medical Oncology', 'Radiation Oncology', 'Psychiatric Oncology'].map((spec, idx) => (
                           <div key={idx} className="spec-list-item">
                              <CheckSquare size={24} className="spec-check-icon" />
                              <span className="spec-item-name">{spec}</span>
