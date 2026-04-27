@@ -94,8 +94,8 @@ const AboutPreview = () => {
                   <span>Our Journey</span>
                   <div className="btn-glow"></div>
                 </Link>
-                <Link to="/contact" className="btn-modern-text">
-                  Meet the Team →
+                <Link to="/services" className="btn-modern-text">
+                  Our Services →
                 </Link>
               </div>
             </motion.div>
