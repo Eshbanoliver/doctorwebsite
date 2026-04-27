@@ -111,7 +111,7 @@ const About = () => {
               >
                 <div className="visual-glass-frame">
                   <img 
-                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200" 
+                    src="/medical_tech.png" 
                     alt="Medical Innovation" 
                     className="hero-innovation-img"
                   />
@@ -166,7 +166,7 @@ const About = () => {
             >
               <div className="story-img-main">
                 <img 
-                  src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1200" 
+                  src="/hospital_exterior.png" 
                   alt="Our Facility" 
                   className="main-story-img"
                 />
@@ -184,7 +184,7 @@ const About = () => {
 
               <div className="story-img-secondary">
                 <img 
-                  src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" 
+                  src="/medical_detail.png" 
                   alt="Specialist" 
                 />
                 <div className="img-glow-ring"></div>

@@ -49,7 +49,7 @@ const AboutPreview = () => {
               {/* Main Image Frame with Parallax-ready feel */}
               <div className="main-image-frame glass-border">
                 <img 
-                  src="/premium_modern_clinic_about.png" 
+                  src="/doctor_clinic_modern.png" 
                   alt="Medical Excellence" 
                   className="about-img-main"
                 />

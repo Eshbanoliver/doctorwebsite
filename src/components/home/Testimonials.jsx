@@ -98,7 +98,9 @@ const Testimonials = () => {
 
               <div className="testimonial-user-profile-v2">
                 <div className="user-avatar-wrapper-v2">
-                  <img src={testi.image} alt={testi.name} className="user-avatar-img-v2" />
+                  <div className="user-avatar-initials">
+                    {testi.name.split(' ').map(n => n[0]).join('')}
+                  </div>
                 </div>
                 <div className="user-info-text-v2">
                   <h4 className="user-name-v2">{testi.name}</h4>
