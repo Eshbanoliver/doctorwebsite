@@ -44,26 +44,7 @@ const Hero = () => {
               </motion.div>
             </div>
 
-            <div className="hero-stats-row">
-              <div className="stat-card">
-                <div className="stat-icon-circle bg-soft-teal">
-                  <Shield size={28} className="text-teal" />
-                </div>
-                <div className="stat-text">
-                  <span className="stat-count">100% Safe</span>
-                  <span className="stat-label">Certified Care</span>
-                </div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-icon-circle bg-soft-blue">
-                  <Users size={28} className="text-blue" />
-                </div>
-                <div className="stat-text">
-                  <span className="stat-count">24/7 Support</span>
-                  <span className="stat-label">Ready to Help</span>
-                </div>
-              </div>
-            </div>
+
           </motion.div>
 
           <motion.div
