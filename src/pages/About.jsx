@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
   Award, BookOpen, Clock, Shield, 
   Stethoscope, Heart, Users, Sparkles, 
-  Target, Zap, CheckCircle2 
+  Target, Zap, CheckCircle2, Activity
 } from 'lucide-react';
 import SectionHeader from '../components/ui/SectionHeader';
 import MissionVision from '../components/home/MissionVision';
