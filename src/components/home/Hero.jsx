@@ -63,6 +63,9 @@ const Hero = () => {
                 src={doctorHeroImg}
                 alt="Dr. Quresh Bambora" 
                 className="hero-main-img"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                />
             </div>
             

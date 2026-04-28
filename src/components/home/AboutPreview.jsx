@@ -47,6 +47,8 @@ const AboutPreview = () => {
                   src="/doctor_clinic_modern.png" 
                   alt="Medical Excellence" 
                   className="about-img-main"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="img-gloss-overlay"></div>
               </div>

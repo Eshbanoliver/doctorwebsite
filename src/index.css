@@ -36,6 +36,9 @@ body {
   color: var(--text-main);
   line-height: 1.5;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
@@ -104,6 +107,15 @@ body {
 .text-center { text-align: center; }
 .relative { position: relative; }
 .overflow-hidden { overflow: hidden; }
+
+/* Performance Utilities */
+.will-change-transform { will-change: transform; }
+.will-change-opacity { will-change: opacity; }
+
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
+}
 
 /* Highlight background utility */
 .highlight-bg {

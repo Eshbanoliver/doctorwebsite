@@ -136,6 +136,8 @@ const DoctorPreview = () => {
                     src={doctorImg} 
                     alt="Dr. Quresh Bambora" 
                     className="doc-portrait-img"
+                    loading="lazy"
+                    decoding="async"
                   />
                   
                   {/* Floating Tags */}

@@ -16,15 +16,33 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <AboutPreview />
-      <Metrics />
-      <ServicesPreview />
-      <DoctorPreview />
-      <MissionVision />
-      <WhyChooseUs />
-      <CoreValues />
-      <Testimonials />
-      <FAQPreview />
+      <div className="content-visibility-auto">
+        <AboutPreview />
+      </div>
+      <div className="content-visibility-auto">
+        <Metrics />
+      </div>
+      <div className="content-visibility-auto">
+        <ServicesPreview />
+      </div>
+      <div className="content-visibility-auto">
+        <DoctorPreview />
+      </div>
+      <div className="content-visibility-auto">
+        <MissionVision />
+      </div>
+      <div className="content-visibility-auto">
+        <WhyChooseUs />
+      </div>
+      <div className="content-visibility-auto">
+        <CoreValues />
+      </div>
+      <div className="content-visibility-auto">
+        <Testimonials />
+      </div>
+      <div className="content-visibility-auto">
+        <FAQPreview />
+      </div>
       <CTASection />
     </>
   );
