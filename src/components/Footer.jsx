@@ -28,11 +28,15 @@ const Footer = () => {
               Providing premium healthcare services with a focus on liquid glass aesthetics and modern medical care.
             </p>
             <div className="footer-social-links">
-              {[Globe, Share2, Mail].map((Icon, idx) => (
-                <a key={idx} href="#" className="footer-social-icon-box glass-card">
-                  <Icon size={20} />
+                <a href="https://in.linkedin.com/in/drquresh-bambora-8578a055" target="_blank" rel="noreferrer" className="footer-social-icon-box glass-card">
+                  <Globe size={20} />
                 </a>
-              ))}
+                <a href="https://www.instagram.com/drquresh/" target="_blank" rel="noreferrer" className="footer-social-icon-box glass-card">
+                  <Share2 size={20} />
+                </a>
+                <a href="mailto:contact@drquresh.com" className="footer-social-icon-box glass-card">
+                  <Mail size={20} />
+                </a>
             </div>
           </div>
 
@@ -65,7 +69,7 @@ const Footer = () => {
             <div className="footer-contact-list">
               <div className="footer-contact-item">
                 <MapPin size={20} className="footer-contact-icon" />
-                <span>Udaipur, Rajasthan 313001</span>
+                <span>PIMS City Hospital, Transport Nagar, Bedwas, Udaipur</span>
               </div>
               <div className="footer-contact-item">
                 <Mail size={20} className="footer-contact-icon" />

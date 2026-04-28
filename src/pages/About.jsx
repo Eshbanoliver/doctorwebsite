@@ -206,15 +206,13 @@ const About = () => {
               className="story-text"
             >
               <div className="story-header-creative">
-                <span className="story-pre-title">Our Visionary Genesis</span>
-                <h2 className="story-title">Bridging Science with <span className="highlight-text">Empathy</span></h2>
+                <span className="story-pre-title">Meet The Specialist</span>
+                <h2 className="story-title">Specializing in <span className="highlight-text">Head & Neck Cancers</span></h2>
                 <div className="story-accent-line"></div>
               </div>
 
               <p className="story-para">
-                Founded with a singular vision, PIMS City Hospital bridges the gap between 
-                advanced medical science and personalized care. We believe every patient 
-                deserves a healthcare journey that is seamless, transparent, and dignified.
+                Introducing the renowned Dr. Quresh Bambora, a highly skilled and compassionate surgical oncologist who is committed to providing exceptional cancer care to his patients. With extensive experience in complex oncological procedures, Dr. Bambora is recognized as one of Udaipur's finest cancer specialists. He excels in the comprehensive treatment and surgical management of head and neck cancers, utilizing cutting-edge technology to ensure the highest level of personalized care. Located at OPD 12 Consulting Room, PIMS City Hospital in Transport Nagar, Bedwas, Dr. Bambora is a steadfast advocate for his patients, offering hope, precision, and guidance throughout their journey towards recovery.
               </p>
               
               <div className="story-pill-grid">

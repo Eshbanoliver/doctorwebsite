@@ -26,6 +26,10 @@ const Hero = () => {
               Advanced <span className="gradient-text">Cancer Care</span> & Recovery
             </h1>
             
+            <h3 style={{ color: 'var(--primary)', fontSize: '1.2rem', marginBottom: '16px', fontWeight: '600' }}>
+              Expert Surgical Oncologist in Udaipur
+            </h3>
+            
             <p className="hero-description">
               Experience exceptional surgical oncology and personalized cancer care at PIMS City Hospital. We combine advanced technology with compassionate service for a healthier future.
             </p>

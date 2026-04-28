@@ -6,51 +6,51 @@ import { Quote, Star } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Rahul Sharma',
-      role: 'Business Owner',
-      text: 'The best medical experience I have ever had. The glass UI on their reports is so modern and easy to read.',
+      name: 'A Grateful Patient',
+      role: 'Cancer Survivor',
+      text: 'The level of care and expertise provided during my cancer treatment was outstanding. I felt supported every step of the way.',
       image: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=200'
     },
     {
-      name: 'Anjali Gupta',
-      role: 'Teacher',
-      text: 'I was impressed by the quick response and the cleanliness of the clinic. The online consultation is great!',
+      name: 'Family Member',
+      role: 'Patient Relative',
+      text: 'We were terrified when we heard the diagnosis, but the precise surgical approach and compassionate guidance gave us hope and a clear path to recovery.',
       image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200'
     },
     {
-      name: 'Vikram Singh',
-      role: 'IT Professional',
-      text: 'Highly recommended for premium care. The diagnostic reports were accurate and delivered within hours.',
+      name: 'Anonymous',
+      role: 'Recovering Patient',
+      text: 'Highly recommended for premium oncology care. The minimally invasive surgery allowed me to recover much faster than I ever expected.',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200'
     },
     {
-      name: 'Priya Mehta',
-      role: 'Software Engineer',
-      text: 'The care I received was exceptional. The staff was attentive and the facility was top-notch.',
+      name: 'P. M.',
+      role: 'Oncology Patient',
+      text: 'The comprehensive approach to my treatment made all the difference. The entire team was incredibly attentive and professional.',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200'
     },
     {
-      name: 'Rajesh Kumar',
-      role: 'Retired Officer',
-      text: 'Very satisfied with the treatment. Recovery process was explained clearly and follow-ups helpful.',
+      name: 'Former Patient',
+      role: 'Cancer Survivor',
+      text: 'Very satisfied with the surgical treatment. The recovery process was explained clearly and the follow-up care was excellent.',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200'
     },
     {
-      name: 'Sneha Patel',
-      role: 'Designer',
-      text: 'Modern clinic with a welcoming atmosphere. I felt comfortable and well-cared for from start to finish.',
+      name: 'Patient S.',
+      role: 'Patient',
+      text: 'A modern, clean facility with a welcoming atmosphere. I felt comfortable and well-cared for from the moment I walked in.',
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200'
     },
     {
-      name: 'Amit Varma',
-      role: 'Analyst',
-      text: 'State-of-the-art technology. I got my results quickly and the doctors were very knowledgeable.',
+      name: 'V. A.',
+      role: 'Patient',
+      text: 'State-of-the-art surgical technology. I am so grateful for the expert hands that guided me through a very complex procedure.',
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200'
     },
     {
-      name: 'Meera Reddy',
-      role: 'Artist',
-      text: 'A truly patient-centric approach. They listen to your concerns and provide personalized care.',
+      name: 'Anonymous',
+      role: 'Patient Relative',
+      text: 'A truly patient-centric approach to cancer care. They listened to our concerns and provided personalized, empathetic care.',
       image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=200'
     }
   ];

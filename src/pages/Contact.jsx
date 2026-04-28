@@ -32,7 +32,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Our Location',
-      details: 'Udaipur, Rajasthan 313001',
+      details: 'OPD 12 Consulting Room, PIMS City Hospital, Transport Nagar, Bedwas, Udaipur, Rajasthan',
       theme: 'theme-blue'
     },
     {
@@ -236,10 +236,10 @@ const Contact = () => {
                         <div className="v2-input-group">
                            <label><Calendar size={14} /> Service</label>
                            <select>
-                              <option>General Consultation</option>
-                              <option>Health Checkup</option>
-                              <option>Diagnostics</option>
-                              <option>Emergency Care</option>
+                              <option>Surgical Oncology</option>
+                              <option>Medical Oncology</option>
+                              <option>Cancer Screening & Diagnosis</option>
+                              <option>Online Consultation</option>
                            </select>
                         </div>
                      </div>

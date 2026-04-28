@@ -33,58 +33,49 @@ const Services = () => {
 
   const services = [
     {
-      icon: Stethoscope,
-      title: 'Surgical Oncology',
-      desc: 'Advanced minimally invasive and laparoscopic surgeries for various types of cancers.',
-      detailed_desc: 'Our surgical oncology services utilize cutting-edge techniques, including minimally invasive and laparoscopic surgeries. We specialize in colorectal, paediatric, pancreas, and other complex oncological surgeries.',
-      color: 'theme-blue',
-      bg: 'theme-blue',
-      benefits: ['Minimally Invasive Surgery', 'Laparoscopic Oncology', 'Colorectal Surgery', 'Paediatric & Pancreas Cancers']
-    },
-    {
       icon: Activity,
-      title: 'Medical Oncology & Therapy',
-      desc: 'Comprehensive cancer therapies including chemotherapy, hormone therapy, and targeted treatments.',
-      detailed_desc: 'We offer a full spectrum of medical oncology treatments. Our services include systemic cancer therapy, specialized hormone therapy for breast cancer, and treatments managed by expert medical and haemato oncologists.',
+      title: 'Medical & Radiation Oncology',
+      desc: 'Comprehensive cancer therapies including chemotherapy, hormone therapy, and precise radiation treatments.',
+      detailed_desc: 'Our medical and radiation oncology departments provide a full spectrum of treatments. We specialize in systemic cancer therapy, hormone therapy (including breast cancer), and state-of-the-art radiation treatments to maximize efficacy while minimizing side effects.',
       color: 'theme-teal',
       bg: 'theme-teal',
-      benefits: ['Cancer Therapy', 'Hormone Therapy', 'Haemato Oncology', 'Targeted Treatment']
+      benefits: ['Medical Oncology', 'Radiation Oncology', 'Breast Cancer Treatment (including Hormone Therapy)', 'Cancer Therapy & Rehabilitation']
     },
     {
-      icon: Zap,
-      title: 'Radiation Oncology',
-      desc: 'State-of-the-art radio therapy centers providing precise radiation treatments.',
-      detailed_desc: 'Our radiation oncology centers are equipped with advanced technology to deliver precise and effective radiation therapy. We focus on maximizing treatment efficacy while minimizing side effects.',
-      color: 'theme-rose',
-      bg: 'theme-rose',
-      benefits: ['Radio Therapy Centres', 'Precise Radiation', 'Advanced Technology', 'Expert Radiation Oncologists']
+      icon: Stethoscope,
+      title: 'Advanced Surgical Oncology',
+      desc: 'Expert surgical management utilizing cutting-edge techniques for complex oncological procedures.',
+      detailed_desc: 'We utilize cutting-edge surgical techniques, including minimally invasive and laparoscopic surgeries, to treat various types of cancers. Our expertise ensures precise tumor removal, faster recovery times, and improved patient outcomes.',
+      color: 'theme-blue',
+      bg: 'theme-blue',
+      benefits: ['Surgical Oncology', 'Minimally Invasive Cancer Surgery', 'Laparoscopic Cancer Surgery', 'Head & Neck Cancer Treatment']
     },
     {
       icon: Microscope,
       title: 'Organ-Specific Cancer Care',
-      desc: 'Specialized care for head & neck, bladder, colon, kidney, neuro, ocular, skin, and more.',
-      detailed_desc: 'Our team includes specialists dedicated to specific organs. We provide expert care for head & neck, bladder, colon, kidney, laryngeal, neuro, ocular, orthopaedic, skin, thoracic, uterus, gynaecologic, and uro cancers.',
+      desc: 'Specialized care and advanced treatment plans for specific organs and localized cancers.',
+      detailed_desc: 'Our specialists are dedicated to organ-specific care, providing tailored treatment plans for a wide range of cancers. We use an interdisciplinary approach to ensure the most effective treatment for complex cases.',
       color: 'theme-indigo',
       bg: 'theme-indigo',
-      benefits: ['Head & Neck Oncology', 'Gynaecologic Oncology', 'Neuro & Ocular Oncology', 'Thoracic & Uro Oncology']
+      benefits: ['Gastrointestinal & Colorectal Cancer Treatment', 'Thoracic Cancer Treatment', 'Pancreatic Cancer Treatment', 'Kidney & Bladder Cancer Treatment', 'Uterus & Gynecologic Oncology']
     },
     {
       icon: ShieldCheck,
-      title: 'Psychiatric Oncology',
-      desc: 'Mental health and psychological support tailored for cancer patients.',
-      detailed_desc: 'We understand that a cancer diagnosis affects mental health. Our psychiatric oncology services offer emotional and psychological support to patients and their families throughout the treatment journey.',
+      title: 'Specialized Oncology',
+      desc: 'Dedicated oncology services for specialized conditions and specific demographics.',
+      detailed_desc: 'We offer specialized oncology care that requires specific expertise. Whether it is treating children, addressing neurological tumors, or managing orthopedic cancers, our specialists are equipped to handle unique oncology needs.',
       color: 'theme-emerald',
       bg: 'theme-emerald',
-      benefits: ['Psychological Support', 'Emotional Care', 'Family Counseling', 'Stress Management']
+      benefits: ['Pediatric Oncology', 'Urologic Oncology', 'Orthopedic Oncology', 'Neuro Oncology', 'Skin Oncology']
     },
     {
       icon: Video,
-      title: 'Online Consultation',
-      desc: 'Connect with expert online oncologists from the comfort of your home.',
-      detailed_desc: 'Access expert oncology advice virtually. Our online consultation platform allows you to securely discuss your diagnosis, treatment plans, and follow-ups with our specialists without needing to travel.',
+      title: 'Diagnostics & Support',
+      desc: 'Accurate diagnosis, online consultations, and compassionate support throughout your journey.',
+      detailed_desc: 'From early detection to post-treatment care, we provide comprehensive support. We offer advanced screening, virtual consultations for convenience, and psycho-oncology support to address the emotional aspects of a cancer diagnosis.',
       color: 'theme-amber',
       bg: 'theme-amber',
-      benefits: ['Virtual Appointments', 'Second Opinions', 'Secure Video Link', 'Convenient Access']
+      benefits: ['Cancer Diagnosis & Screening', 'Online Oncology Consultation', 'Psycho-Oncology Support']
     }
   ];
 
