@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
           >
             <SectionHeader 
               subtitle="The PIMS Advantage"
-              title="Why Choose Our Clinic For Your Care?"
+              title="Why Choose Us"
             />
             <p className="why-choose-desc">
               We understand that choosing a healthcare provider is a significant decision. Here's why thousands of patients trust us with their health Every year.
