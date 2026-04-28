@@ -64,7 +64,7 @@ const MissionVision = () => {
                   <div className="purpose-text-box">
                     <h3 className="purpose-title">Our Mission</h3>
                     <p className="purpose-desc">
-                      To provide accessible, high-quality healthcare using modern technology while maintaining the highest standards of medical ethics and patient compassion.
+                      To provide accessible, high-quality oncology care using modern surgical techniques while maintaining the highest standards of medical ethics and patient compassion.
                     </p>
                   </div>
                 </div>
@@ -78,7 +78,7 @@ const MissionVision = () => {
                   <div className="purpose-text-box">
                     <h3 className="purpose-title">Our Vision</h3>
                     <p className="purpose-desc">
-                      To be the leading medical practice in the region, recognized for excellence in patient outcomes, innovation in healthcare, and community wellness.
+                      To be the leading surgical oncology practice in the region, recognized for excellence in cancer treatment outcomes, surgical innovation, and patient recovery.
                     </p>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ const MissionVision = () => {
               title="Driven by Excellence & Patient Care"
             />
             <p className="mission-long-desc">
-              We believe that healthcare should be proactive, not just reactive. Our mission and vision guide every decision we make, ensuring that our patients receive the best possible treatment at every touchpoint.
+              We believe that cancer care should be comprehensive, personalized, and proactive. Our mission and vision guide every decision we make, ensuring that our patients receive the most advanced surgical treatments and compassionate support at every touchpoint.
             </p>
             <motion.div 
               whileHover={{ y: -5, scale: 1.02 }}
@@ -131,7 +131,7 @@ const MissionVision = () => {
 
                <Shield size={48} className="quote-icon" />
                <div className="quote-text">
-                 "Our goal is to make Udaipur the healthiest city in the state through dedicated medical service."
+                 "Our goal is to provide world-class surgical oncology care, empowering patients in Udaipur with advanced treatments and unwavering support."
                </div>
             </motion.div>
           </motion.div>

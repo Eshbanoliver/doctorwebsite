@@ -16,43 +16,43 @@ const ServicesPreview = () => {
   const services = [
     {
       icon: Stethoscope,
-      title: 'General Consultation',
-      desc: 'Expert general checkups and health guidance for all age groups.',
+      title: 'Surgical Oncology',
+      desc: 'Expert surgical management of Head & Neck, Thoracic, and Gastrointestinal cancers.',
       color: 'text-blue-500',
       bg: 'bg-blue-50'
     },
     {
-      icon: Activity,
-      title: 'Health Checkups',
-      desc: 'Comprehensive full-body health screenings and diagnostic tests.',
+      icon: Zap,
+      title: 'Cancer Therapy',
+      desc: 'Advanced Medical Oncology including Hormone Therapy and chemotherapy management.',
       color: 'text-teal-500',
       bg: 'bg-teal-50'
     },
     {
-      icon: Zap,
-      title: 'Emergency Care',
-      desc: 'Quick and efficient 24/7 medical response for critical situations.',
+      icon: Activity,
+      title: 'Minimally Invasive Surgery',
+      desc: 'Laparoscopic and robotic-assisted surgeries for quicker recovery and precision.',
       color: 'text-rose-500',
       bg: 'bg-rose-50'
     },
     {
       icon: Microscope,
-      title: 'Diagnostics',
-      desc: 'Advanced laboratory and imaging services for accurate results.',
+      title: 'Uro & Gynae Oncology',
+      desc: 'Specialized care for bladder, kidney, uterus, and gynecologic cancers.',
       color: 'text-indigo-500',
       bg: 'bg-indigo-50'
     },
     {
       icon: Shield,
-      title: 'Preventive Healthcare',
-      desc: 'Proactive strategies to maintain long-term health and wellness.',
+      title: 'Radiation Oncology',
+      desc: 'Precision radiotherapy and radio therapy center services for effective treatment.',
       color: 'text-emerald-500',
       bg: 'bg-emerald-50'
     },
     {
       icon: Video,
-      title: 'Online Consultation',
-      desc: 'Connect with experts from the comfort of your home.',
+      title: 'Online Consultations',
+      desc: 'Access expert oncology guidance from anywhere with our digital health portal.',
       color: 'text-amber-500',
       bg: 'bg-amber-50'
     }

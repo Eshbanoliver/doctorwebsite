@@ -57,41 +57,46 @@ const DoctorPreview = () => {
             </p>
 
             <div className="doc-focus-areas">
-              <div className="focus-item">
-                <div className="focus-icon-box blue">
-                  <Stethoscope size={20} />
-                </div>
-                <span>Surgical Oncology</span>
-              </div>
-              <div className="focus-item">
-                <div className="focus-icon-box teal">
-                  <HeartPulse size={20} />
-                </div>
-                <span>Head & Neck Cancers</span>
-              </div>
-              <div className="focus-item">
-                <div className="focus-icon-box rose">
-                  <ShieldCheck size={20} />
-                </div>
-                <span>Minimally Invasive</span>
-              </div>
+              {[
+                { label: 'Surgical Oncology', icon: Stethoscope, class: 'blue' },
+                { label: 'Head & Neck Cancers', icon: HeartPulse, class: 'teal' },
+                { label: 'Minimally Invasive', icon: ShieldCheck, class: 'rose' }
+              ].map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="focus-item-v2 glass-card"
+                >
+                  <div className={`focus-icon-box-v2 ${item.class}`}>
+                    <item.icon size={18} />
+                  </div>
+                  <span>{item.label}</span>
+                  <div className="focus-item-glow"></div>
+                </motion.div>
+              ))}
             </div>
             
-            <div className="doctor-stats-canvas">
+            <div className="doctor-stats-canvas-v2">
               {[
                 { icon: Star, value: '4.9/5', label: 'Patient Trust', color: '#f59e0b' },
                 { icon: Award, value: '25+', label: 'Medical Awards', color: '#10b981' },
                 { icon: GraduationCap, value: 'Fellow', label: 'RCP London', color: '#3b82f6' }
               ].map((stat, i) => (
-                <div key={i} className="doc-canvas-stat">
-                  <div className="canvas-icon" style={{ backgroundColor: `${stat.color}15`, color: stat.color }}>
-                    <stat.icon size={20} />
+                <motion.div 
+                  key={i} 
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="doc-canvas-stat-v2 glass-card"
+                >
+                  <div className="canvas-icon-v2" style={{ backgroundColor: `${stat.color}15`, color: stat.color }}>
+                    <stat.icon size={22} />
                   </div>
-                  <div className="canvas-info">
-                    <strong>{stat.value}</strong>
-                    <span>{stat.label}</span>
+                  <div className="canvas-info-v2">
+                    <strong className="stat-value-animated">{stat.value}</strong>
+                    <span className="stat-label-modern">{stat.label}</span>
                   </div>
-                </div>
+                  <div className="stat-card-border" style={{ borderColor: stat.color }}></div>
+                </motion.div>
               ))}
             </div>
 
