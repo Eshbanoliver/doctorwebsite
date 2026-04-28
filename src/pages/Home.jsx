@@ -3,7 +3,7 @@ import './Home.css';
 import Hero from '../components/home/Hero';
 import AboutPreview from '../components/home/AboutPreview';
 import Metrics from '../components/home/Metrics';
-import ServicesPreview from '../components/home/ServicesPreview';
+import TreatmentsPreview from '../components/home/TreatmentsPreview';
 import DoctorPreview from '../components/home/DoctorPreview';
 import MissionVision from '../components/home/MissionVision';
 import CoreValues from '../components/home/CoreValues';
@@ -23,7 +23,7 @@ const Home = () => {
         <Metrics />
       </div>
       <div className="content-visibility-auto">
-        <ServicesPreview />
+        <TreatmentsPreview />
       </div>
       <div className="content-visibility-auto">
         <DoctorPreview />

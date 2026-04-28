@@ -44,12 +44,12 @@ const Footer = () => {
           <div className="footer-links-column">
             <h4 className="footer-col-title">Quick Links</h4>
             <ul className="footer-links-list">
-              {['Home', 'About Us', 'Services', 'FAQ', 'Contact Us'].map((item) => {
+              {['Home', 'About Us', 'Treatments', 'FAQ', 'Contact Us'].map((item) => {
                 const pathMap = {
                   'Home': '/',
                   'About Us': '/about',
                   'Contact Us': '/contact',
-                  'Services': '/services',
+                  'Treatments': '/treatments',
                   'FAQ': '/faq'
                 };
                 return (

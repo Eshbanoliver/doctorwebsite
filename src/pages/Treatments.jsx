@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Services.css';
+import './Treatments.css';
 import SectionHeader from '../components/ui/SectionHeader';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import CTASection from '../components/home/CTASection';
 
-const Services = () => {
+const Treatments = () => {
   const [selectedService, setSelectedService] = useState(null);
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ const Services = () => {
     setMousePos({ x, y });
   };
 
-  const services = [
+  const treatments = [
     {
       icon: Activity,
       title: 'Medical & Radiation Oncology',
@@ -80,34 +80,34 @@ const Services = () => {
   ];
 
   return (
-    <div className="services-page-container">
+    <div className="treatments-page-container">
       {/* Creative Hero Section */}
-      <section className="services-hero-section" onMouseMove={handleMouseMove}>
-        <div className="services-hero-mesh">
+      <section className="treatments-hero-section" onMouseMove={handleMouseMove}>
+        <div className="treatments-hero-mesh">
           <div className="s-blob blob-1"></div>
           <div className="s-blob blob-2"></div>
         </div>
 
         <div className="container">
-          <div className="services-hero-grid">
+          <div className="treatments-hero-grid">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="services-hero-text-side"
+              className="treatments-hero-text-side"
             >
-              <span className="services-hero-kicker">Precision in Practice</span>
-              <h1 className="services-hero-title">
+              <span className="treatments-hero-kicker">Precision in Practice</span>
+              <h1 className="treatments-hero-title">
                 Comprehensive <br />
-                <span className="gradient-text">Medical Solutions</span>
+                <span className="gradient-text">Oncology Treatments</span>
               </h1>
-              <p className="services-hero-desc">
-                We provide a wide range of specialized medical services designed to meet 
+              <p className="treatments-hero-desc">
+                We provide a wide range of specialized oncology treatments designed to meet 
                 the unique needs of every patient. Our approach is defined by precision 
-                medicine and the pursuit of long-term wellness.
+                medicine and the pursuit of long-term recovery.
               </p>
               
-              <div className="services-hero-badges">
+              <div className="treatments-hero-badges">
                 <div className="hero-badge iso">
                   <div className="badge-icon-box blue">
                     <ShieldCheck size={20} />
@@ -123,20 +123,20 @@ const Services = () => {
               </div>
             </motion.div>
 
-            <div className="services-hero-visual-side">
+            <div className="treatments-hero-visual-side">
               <motion.div 
                 style={{ 
                   rotateX: -mousePos.y / 2, 
                   rotateY: mousePos.x / 2,
                   perspective: 1000 
                 }}
-                className="services-visual-canvas"
+                className="treatments-visual-canvas"
               >
                 <div className="visual-glass-stack">
                   <img 
                     src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200" 
                     alt="Medical Tech" 
-                    className="services-main-img"
+                    className="treatments-main-img"
                   />
                   <div className="glass-reflection"></div>
                 </div>
@@ -170,17 +170,17 @@ const Services = () => {
       </section>
 
       {/* Services Grid Section */}
-      <section className="services-explore-section">
+      <section className="treatments-explore-section">
         <div className="container">
-          <div className="services-main-grid">
-            {services.map((service, idx) => (
+          <div className="treatments-main-grid">
+            {treatments.map((treatment, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                onClick={() => setSelectedService(service)}
+                onClick={() => setSelectedService(treatment)}
                 onMouseMove={(e) => {
                   const rect = e.currentTarget.getBoundingClientRect();
                   const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -188,15 +188,15 @@ const Services = () => {
                   e.currentTarget.style.setProperty('--mouse-x', `${x}%`);
                   e.currentTarget.style.setProperty('--mouse-y', `${y}%`);
                 }}
-                className={`service-explore-card ${service.bg} group`}
+                className={`service-explore-card ${treatment.bg} group`}
               >
                 <div className="card-bg-number">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</div>
                 <div className="service-icon-box">
-                  <service.icon size={40} />
+                  <treatment.icon size={40} />
                 </div>
-                <h3 className="service-explore-title">{service.title}</h3>
+                <h3 className="service-explore-title">{treatment.title}</h3>
                 <p className="service-explore-desc">
-                  {service.desc}
+                  {treatment.desc}
                 </p>
                 <div className="service-explore-link" onClick={(e) => {
                   e.stopPropagation();
@@ -225,7 +225,7 @@ const Services = () => {
            <div className="specialist-box-card">
               <div className="specialist-layout-grid">
                  <div className="specialist-text-content">
-                    <h2 className="specialist-main-title">Specialist Consultations</h2>
+                    <h2 className="specialist-main-title">Expert Consultations</h2>
                     <p className="specialist-sub-desc">
                       Our clinic hosts expert specialists across Surgical, Medical, and Radiation Oncology. We ensure you get comprehensive and advanced cancer care under one roof.
                     </p>
@@ -241,7 +241,7 @@ const Services = () => {
                       className="btn-white-action"
                       onClick={() => navigate('/contact')}
                     >
-                       Get Specialist Appointment
+                       Book Treatment Consultation
                     </button>
                  </div>
                  <div className="specialist-visual-side">
@@ -283,7 +283,7 @@ const Services = () => {
                 {selectedService.detailed_desc}
               </p>
 
-              <h4 className="modal-subtitle">Key Benefits:</h4>
+              <h4 className="modal-subtitle">Treatment Benefits:</h4>
               <div className="modal-benefits-grid">
                 {selectedService.benefits.map((benefit, i) => (
                   <div key={i} className="benefit-item">
@@ -305,7 +305,7 @@ const Services = () => {
                     className="btn-book-outline"
                     onClick={() => navigate('/contact')}
                   >
-                     Book This Service
+                     Book This Treatment
                   </button>
               </div>
             </motion.div>
@@ -317,4 +317,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Treatments;

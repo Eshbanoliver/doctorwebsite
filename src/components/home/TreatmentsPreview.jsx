@@ -12,8 +12,8 @@ import {
   Video 
 } from 'lucide-react';
 
-const ServicesPreview = () => {
-  const services = [
+const TreatmentsPreview = () => {
+  const treatments = [
     {
       icon: Stethoscope,
       title: 'Surgical Oncology',
@@ -64,15 +64,15 @@ const ServicesPreview = () => {
         <div className="services-preview-header">
           <SectionHeader 
             subtitle="Our Expertise"
-            title="Premium Medical Services"
+            title="Advanced Oncology Treatments"
           />
-          <Link to="/services" className="btn-utility">
-            View All Services
+          <Link to="/treatments" className="btn-utility">
+            View All Treatments
           </Link>
         </div>
 
         <div className="services-preview-grid">
-          {services.map((service, idx) => (
+          {treatments.map((treatment, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
@@ -83,18 +83,18 @@ const ServicesPreview = () => {
               }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
-              className={`service-preview-card ${service.bg} group`}
+              className={`service-preview-card ${treatment.bg} group`}
             >
-              <div className={`service-icon-container ${service.bg}`}>
-                <service.icon size={32} className={`${service.color} transition-transform duration-500 group-hover:rotate-12`} />
+              <div className={`service-icon-container ${treatment.bg}`}>
+                <treatment.icon size={32} className={`${treatment.color} transition-transform duration-500 group-hover:rotate-12`} />
               </div>
               
-              <h3 className="service-card-title">{service.title}</h3>
+              <h3 className="service-card-title">{treatment.title}</h3>
               <p className="service-card-desc">
-                {service.desc}
+                {treatment.desc}
               </p>
               
-              <Link to="/services" className="service-card-link">
+              <Link to="/treatments" className="service-card-link">
                 <span>Explore Details</span>
                 <PlusCircle size={20} className="link-icon" />
               </Link>
@@ -109,4 +109,4 @@ const ServicesPreview = () => {
   );
 };
 
-export default ServicesPreview;
+export default TreatmentsPreview;

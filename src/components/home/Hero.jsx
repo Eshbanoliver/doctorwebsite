@@ -42,8 +42,8 @@ const Hero = () => {
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="btn-wrapper">
-                <Link to="/services" className="btn-outline hero-btn glass-card">
-                  <span>Explore Services</span>
+                <Link to="/treatments" className="btn-outline hero-btn glass-card">
+                  <span>Explore Treatments</span>
                 </Link>
               </motion.div>
             </div>
