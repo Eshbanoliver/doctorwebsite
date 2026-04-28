@@ -81,7 +81,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="footer-bottom-bar">
-          <p>© Copyright 2026 | Dr. Quresh Bambora | All Rights Reserved</p>
+          <p>© Copyright 2026 | <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'inherit'}>Dr. Quresh Bambora</Link> | All Rights Reserved</p>
         </div>
       </div>
     </footer>
